@@ -59,25 +59,13 @@
   .topbar .wrap{
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
     height:36px;
     font-size:0.76rem;
     letter-spacing:0.01em;
   }
   .topbar-text strong{font-weight:600; color:var(--copper);}
   .topbar-text span{opacity:0.75; color:var(--stone); margin-left:6px;}
-  .topbar-cta{
-    display:inline-block;
-    background:var(--copper);
-    color:var(--navy-deep);
-    text-decoration:none;
-    font-weight:700;
-    font-size:0.7rem;
-    padding:4px 14px;
-    white-space:nowrap;
-    transition:background .2s ease;
-  }
-  .topbar-cta:hover{background:#ffce33;}
 
   /* ---------- NAV ---------- */
   header{
@@ -87,45 +75,34 @@
   }
   nav.wrap{
     display:flex; align-items:center; justify-content:space-between;
-    height:80px;
+    height:76px;
+    padding-left:24px;
+    padding-right:24px;
   }
   .brand{
-    display:flex; align-items:center; gap:12px;
+    display:flex; align-items:center; gap:10px;
   }
   .brand-mark{
-    width:38px; height:38px;
+    width:34px; height:34px;
     background:var(--navy);
     color:var(--copper);
     display:flex; align-items:center; justify-content:center;
     font-family:'Playfair Display', serif;
     font-weight:700;
-    font-size:1.1rem;
+    font-size:1rem;
     flex-shrink:0;
   }
-  .brand-text{font-family:'Playfair Display', serif; font-weight:700; font-size:1.16rem; color:var(--ink); line-height:1.2;}
-  .brand-text small{display:block; font-family:'Work Sans', sans-serif; font-size:0.62rem; letter-spacing:0.12em; color:var(--copper-deep); font-weight:600; margin-top:2px;}
-  .navlinks{display:flex; gap:22px; font-size:0.85rem;}
+  .brand-text{font-family:'Playfair Display', serif; font-weight:700; font-size:1.05rem; color:var(--ink); line-height:1.2; white-space:nowrap;}
+  .brand-text small{display:block; font-family:'Work Sans', sans-serif; font-size:0.6rem; letter-spacing:0.1em; color:var(--copper-deep); font-weight:600; margin-top:2px;}
+  .navlinks{display:flex; align-items:center; gap:17px; font-size:0.94rem; flex-wrap:nowrap;}
   .navlinks a{
-    color:rgba(30,26,18,0.7);
+    color:rgba(30,26,18,0.78);
+    font-weight:700;
     text-decoration:none;
+    white-space:nowrap;
     transition:color .2s ease;
   }
   .navlinks a:hover{color:var(--navy);}
-  .nav-cta{
-    display:inline-block;
-    margin-left:20px;
-    padding:7px 14px;
-    background:var(--navy);
-    border:none;
-    color:var(--ivory);
-    text-decoration:none;
-    font-size:0.74rem;
-    font-weight:600;
-    white-space:nowrap;
-    flex-shrink:0;
-    transition:background .2s ease;
-  }
-  .nav-cta:hover{background:var(--navy-deep);}
 
 
   /* ---------- HERO ---------- */
@@ -358,6 +335,7 @@
 
   /* ---------- TRANSVERSAL BLOCKS ---------- */
   .transversal{background:var(--navy); color:var(--ivory); padding:96px 0;}
+  .transversal--deep{background:var(--navy-deep);}
   .transversal .tag{
     font-family:'Work Sans', sans-serif;
     font-weight:700;
@@ -697,7 +675,6 @@
 <div class="topbar">
   <div class="wrap">
     <div class="topbar-text"><strong>Guichet unique</strong><span>investisseurs Maroc &amp; Espagne</span></div>
-    <a href="#" class="topbar-cta">Mon Espace</a>
   </div>
 </div>
 
@@ -713,8 +690,9 @@
       <a href="#financement">Financement</a>
       <a href="#guichet-administratif">Formalités</a>
       <a href="#conciergerie">Conciergerie</a>
+      <a href="#">Mon Espace</a>
+      <a href="#contact">Contact</a>
     </div>
-    <a href="#contact" class="nav-cta">Nous contacter</a>
   </nav>
 </header>
 
@@ -843,7 +821,7 @@
   </div>
 </section>
 
-<section class="transversal" id="guichet-administratif">
+<section class="transversal transversal--deep" id="guichet-administratif">
   <div class="wrap">
     <p class="tag">Notre guichet administratif</p>
     <h2 class="t-col-h2">Créer et faire vivre votre société au Maroc</h2>
@@ -976,13 +954,12 @@
     <div class="section-head" style="margin-bottom:44px;">
       <p class="tag">Nos partenaires</p>
       <h2>Un réseau qui existe déjà</h2>
-      <p>Estrecho Capital s'appuie sur le réseau professionnel de Roots Club (ex-Africa Business Club) et sur ses partenaires institutionnels, bancaires et prestataires, des deux côtés du Détroit.</p>
+      <p>Estrecho Capital s'appuie sur un réseau de partenaires institutionnels, bancaires et prestataires, construit des deux côtés du Détroit.</p>
     </div>
   </div>
 
   <div class="marquee">
     <div class="marquee-track">
-      <span class="marquee-logo">Roots Club</span>
       <span class="marquee-logo">Chambre de Commerce Hispano-Marocaine</span>
       <span class="marquee-logo">AMDIE — Morocco Now</span>
       <span class="marquee-logo">Banque Partenaire Espagne</span>
@@ -990,7 +967,7 @@
       <span class="marquee-logo">Cabinet d'Avocats d'Affaires</span>
       <span class="marquee-logo">Expert-Comptable</span>
       <span class="marquee-logo">Notaire</span>
-      <span class="marquee-logo">Roots Club</span>
+      <span class="marquee-logo">Agence Immobilière Premium</span>
       <span class="marquee-logo">Chambre de Commerce Hispano-Marocaine</span>
       <span class="marquee-logo">AMDIE — Morocco Now</span>
       <span class="marquee-logo">Banque Partenaire Espagne</span>
@@ -998,6 +975,7 @@
       <span class="marquee-logo">Cabinet d'Avocats d'Affaires</span>
       <span class="marquee-logo">Expert-Comptable</span>
       <span class="marquee-logo">Notaire</span>
+      <span class="marquee-logo">Agence Immobilière Premium</span>
     </div>
   </div>
 </section>
