@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre approche en détail — Estrecho Capital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0B1420;
+    --navy-deep: #070C14;
+    --stone: #EFE9D9;
+    --stone-warm: #E6DFC9;
+    --ink: #1E1A12;
+    --ivory: #F5F1E7;
+    --card: #FFFFFF;
+    --copper: #FABD00;
+    --copper-deep: #D9A300;
+    --line: rgba(30,26,18,0.12);
+    --line-light: rgba(245,241,231,0.16);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.6;
+    font-size:16px;
+  }
+
+  h1,h2,h3,.serif{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    line-height:1.15;
+  }
+
+  a{color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+
+  /* ---------- TOPBAR ---------- */
+  .topbar{background:var(--navy-deep); color:var(--copper);}
+  .topbar .wrap{
+    display:flex; align-items:center; justify-content:center;
+    height:34px; font-size:0.76rem; letter-spacing:0.01em;
+  }
+  .topbar strong{font-weight:600; color:var(--copper);}
+  .topbar span{opacity:0.75; color:var(--stone); margin-left:6px;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--stone);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; height:80px;}
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+  .brand-mark{
+    width:38px; height:38px;
+    background:var(--navy); color:var(--copper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display', serif; font-weight:700; font-size:1.1rem;
+    flex-shrink:0;
+  }
+  .brand-text{font-family:'Playfair Display', serif; font-size:1.16rem; color:var(--ink); line-height:1.2;}
+  .brand-text small{display:block; font-family:'Work Sans', sans-serif; font-size:0.62rem; letter-spacing:0.12em; color:rgba(30,26,18,0.5); font-weight:600; margin-top:2px;}
+  .navlinks{display:flex; gap:22px; font-size:0.85rem;}
+  .navlinks a{color:rgba(30,26,18,0.7); text-decoration:none; transition:color .2s ease;}
+  .navlinks a:hover{color:var(--navy);}
+  .nav-cta{
+    display:inline-block; padding:9px 16px; background:var(--navy); border:none;
+    color:var(--ivory); text-decoration:none; font-size:0.8rem; font-weight:600;
+    white-space:nowrap; transition:background .2s ease;
+  }
+  .nav-cta:hover{background:var(--navy-deep);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--navy);
+    color:var(--ivory);
+    padding:64px 0 56px;
+  }
+  .eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--copper); margin-bottom:20px;
+    font-family:'Work Sans', sans-serif; font-weight:600;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--copper);}
+  .hero h1{font-size:2.6rem; margin-bottom:20px;}
+  .hero p.lede{
+    font-family:'Work Sans', sans-serif;
+    font-size:1.05rem;
+    color:rgba(245,241,231,0.72);
+    max-width:560px;
+  }
+
+  /* ---------- DETAIL LIST ---------- */
+  .detail{padding:88px 0;}
+  .detail-row{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:48px;
+    padding:44px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .detail-row:first-child{border-top:1px solid var(--line);}
+  .detail-row h3{font-size:1.3rem; color:var(--ink);}
+  .detail-row .detail-copy{
+    font-family:'Work Sans', sans-serif;
+    font-size:1rem;
+    color:rgba(30,26,18,0.66);
+    max-width:640px;
+  }
+  .detail-row ul{list-style:none; margin-top:14px;}
+  .detail-row li{
+    position:relative;
+    padding:8px 0 8px 20px;
+    font-family:'Work Sans', sans-serif;
+    font-size:0.96rem;
+    color:rgba(30,26,18,0.66);
+  }
+  .detail-row li::before{
+    content:"—";
+    position:absolute; left:0; top:8px;
+    color:var(--copper-deep);
+  }
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{
+    background:var(--navy);
+    color:var(--ivory);
+    padding:64px 0;
+    text-align:center;
+  }
+  .cta-banner h2{
+    font-size:1.9rem;
+    margin-bottom:28px;
+  }
+  .cta-banner .btn-primary{
+    display:inline-block;
+    background:var(--copper);
+    color:var(--navy-deep);
+    padding:15px 30px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.94rem;
+    font-family:'Work Sans', sans-serif;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-deep); color:rgba(245,241,231,0.55); padding:36px 0;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:0.82rem;}
+  footer a{color:inherit; text-decoration:none;}
+
+  @media (max-width: 780px){
+    .navlinks{display:none;}
+    .detail-row{grid-template-columns:1fr; gap:14px;}
+    .hero h1{font-size:2.1rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <strong>Guichet unique</strong><span>investisseurs Maroc &amp; Espagne — adhésion de lancement 200 €</span>
+  </div>
+</div>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="index.html">
+      <div class="brand-mark">E</div>
+      <div class="brand-text">Estrecho Capital<small>Guichet unique investisseurs</small></div>
+    </a>
+    <div class="navlinks">
+      <a href="index.html#parcours">Approche</a>
+      <a href="index.html#domaines">Domaines d'intervention</a>
+      <a href="index.html#financement">Solutions de financement</a>
+      <a href="index.html#guichet-administratif">Guichet administratif</a>
+      <a href="index.html#conciergerie">Conciergerie</a>
+    </div>
+    <a href="index.html#contact" class="nav-cta">Nous contacter</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Notre approche</p>
+    <h1>Notre méthode, en détail</h1>
+    <p class="lede">Trois étapes, un seul interlocuteur — de l'étude de faisabilité jusqu'à la mise en exploitation de votre projet au Maroc.</p>
+  </div>
+</section>
+
+<section class="detail">
+  <div class="wrap">
+
+    <div class="detail-row">
+      <h3>Étude &amp; cadrage</h3>
+      <div class="detail-copy">
+        <p>Nous démarrons par un entretien de cadrage pour qualifier le projet : secteur visé, budget, calendrier, niveau d'implication souhaité. Suivent une étude de faisabilité réglementaire propre au secteur, un benchmark du marché marocain et une première identification de zones ou d'actifs pertinents. Cette étape se clôture par un rapport de cadrage écrit, qui sert de base à la suite du dossier.</p>
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <h3>Mise en relation &amp; structuration</h3>
+      <div class="detail-copy">
+        <p>Nous activons notre réseau pour identifier partenaires, terrains ou cibles d'acquisition au Maroc, puis structurons le montage juridique et financier du projet — en lien avec nos partenaires bancaires et notariés des deux rives. Cette étape se conclut par un dossier de structuration complet, prêt à être validé.</p>
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <h3>Réalisation clé en main</h3>
+      <div class="detail-copy">
+        <p>Nous pilotons l'exécution jusqu'à la mise en exploitation effective. Cette phase recouvre plusieurs opérations :</p>
+        <ul>
+          <li>Immatriculation effective de la société et formalités administratives finales</li>
+          <li>Pilotage de chantier ou accompagnement de la transaction jusqu'au closing</li>
+          <li>Mise en place opérationnelle : recrutement, ouverture des comptes, mise en conformité</li>
+          <li>Suivi comptable de démarrage, en lien avec notre guichet administratif</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Démarrez votre étude dès aujourd'hui</h2>
+    <a href="index.html#contact" class="btn-primary">Parlons de votre projet</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Estrecho Capital — Maroc &amp; Espagne</span>
+    <a href="index.html">Retour à l'accueil</a>
+  </div>
+</footer>
+
+</body>
+</html>
