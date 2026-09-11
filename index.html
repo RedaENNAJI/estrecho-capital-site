@@ -103,6 +103,35 @@
     transition:color .2s ease;
   }
   .navlinks a:hover{color:var(--navy);}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%) translateY(6px);
+    background:var(--card);
+    border:1px solid var(--line);
+    box-shadow:0 12px 28px rgba(30,26,18,0.12);
+    padding:8px 0;
+    min-width:160px;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .18s ease, transform .18s ease;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a{
+    display:block;
+    padding:10px 20px;
+    font-size:0.86rem;
+    font-weight:600;
+    color:rgba(30,26,18,0.78);
+    white-space:nowrap;
+  }
+  .nav-dropdown-menu a:hover{background:var(--stone); color:var(--navy);}
 
 
   /* ---------- HERO ---------- */
@@ -188,27 +217,6 @@
     border:1px solid rgba(245,241,231,0.35);
   }
   .btn-ghost:hover{border-color:var(--ivory);}
-
-  .hero-stats{
-    display:flex;
-    gap:40px;
-    padding-top:26px;
-    border-top:1px solid rgba(245,241,231,0.14);
-  }
-  .hero-stats .stat-num{
-    font-family:'Playfair Display', serif;
-    font-weight:700;
-    font-size:1.7rem;
-    color:var(--ivory);
-    display:block;
-    margin-bottom:4px;
-  }
-  .hero-stats p{
-    font-size:0.72rem;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:rgba(245,241,231,0.5);
-  }
 
   .hero-form{
     background:var(--card);
@@ -672,7 +680,7 @@
 
 <div class="topbar">
   <div class="wrap">
-    <div class="topbar-text"><strong>Guichet unique</strong><span>investisseurs Maroc &amp; Espagne</span></div>
+    <div class="topbar-text">🇲🇦 <strong>Guichet unique</strong><span>investisseurs Maroc &amp; Espagne</span> 🇪🇸</div>
   </div>
 </div>
 
@@ -688,7 +696,14 @@
       <a href="#financement">Financement</a>
       <a href="#guichet-administratif">Formalités</a>
       <a href="#conciergerie">Conciergerie</a>
-      <a href="#">Mon Espace</a>
+      <div class="nav-dropdown">
+        <a href="#">Mon Espace</a>
+        <div class="nav-dropdown-menu">
+          <a href="#">Client</a>
+          <a href="#">Partenaire</a>
+          <a href="#">Prestataire</a>
+        </div>
+      </div>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -703,11 +718,6 @@
       <div class="hero-ctas">
         <a href="#contact" class="btn-primary">Démarrer votre étude</a>
         <a href="#parcours" class="btn-ghost">Voir notre approche</a>
-      </div>
-      <div class="hero-stats">
-        <div><span class="stat-num">2 rives</span><p>Maroc &amp; Espagne</p></div>
-        <div><span class="stat-num">4 étapes</span><p>Un seul interlocuteur</p></div>
-        <div><span class="stat-num">200 €</span><p>Adhésion de départ</p></div>
       </div>
     </div>
 
