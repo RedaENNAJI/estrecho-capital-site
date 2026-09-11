@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrecho Capital — Investir au Maroc, accompagné de bout en bout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0B1420;
+    --navy-deep: #070C14;
+    --stone: #EFE9D9;
+    --stone-warm: #E6DFC9;
+    --ink: #1E1A12;
+    --ivory: #F5F1E7;
+    --card: #FFFFFF;
+    --copper: #FABD00;
+    --copper-deep: #D9A300;
+    --line: rgba(30,26,18,0.12);
+    --line-light: rgba(245,241,231,0.16);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.6;
+    font-size:16px;
+  }
+
+  h1,h2,h3,.serif{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    line-height:1.15;
+  }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  a{color:inherit;}
+
+  img{max-width:100%; display:block;}
+
+  /* ---------- TOPBAR ---------- */
+  .topbar{
+    background:var(--navy-deep);
+    color:var(--copper);
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:34px;
+    font-size:0.76rem;
+    letter-spacing:0.01em;
+  }
+  .topbar strong{font-weight:600; color:var(--copper);}
+  .topbar span{opacity:0.75; color:var(--stone); margin-left:6px;}
+  .topbar a{display:none;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--stone);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:80px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+  }
+  .brand-mark{
+    width:38px; height:38px;
+    background:var(--navy);
+    color:var(--copper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.1rem;
+    flex-shrink:0;
+  }
+  .brand-text{font-family:'Playfair Display', serif; font-size:1.16rem; color:var(--ink); line-height:1.2;}
+  .brand-text small{display:block; font-family:'Work Sans', sans-serif; font-size:0.62rem; letter-spacing:0.12em; color:rgba(30,26,18,0.5); font-weight:600; margin-top:2px;}
+  .navlinks{display:flex; gap:22px; font-size:0.85rem;}
+  .navlinks a{
+    color:rgba(30,26,18,0.7);
+    text-decoration:none;
+    transition:color .2s ease;
+  }
+  .navlinks a:hover{color:var(--navy);}
+  .nav-cta{
+    display:inline-block;
+    padding:9px 16px;
+    background:var(--navy);
+    border:none;
+    color:var(--ivory);
+    text-decoration:none;
+    font-size:0.8rem;
+    font-weight:600;
+    white-space:nowrap;
+    transition:background .2s ease;
+  }
+  .nav-cta:hover{background:var(--navy-deep);}
+
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--navy);
+    color:var(--ivory);
+    padding:88px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:8%;
+    top:22%;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:rgba(201,162,39,0.55);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    right:16%;
+    top:38%;
+    width:4px; height:4px;
+    border-radius:50%;
+    background:rgba(201,162,39,0.4);
+  }
+  .hero-grid{
+    position:relative; z-index:2;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:start;
+  }
+  .hero-inner{max-width:600px;}
+  .eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    color:var(--copper);
+    margin-bottom:22px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--copper);}
+  .hero h1{
+    font-size:2.9rem;
+    font-weight:800;
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{color:var(--copper); font-style:italic; font-weight:700;}
+  .hero p.lede{
+    font-family:'Work Sans', sans-serif;
+    font-size:1.05rem;
+    color:rgba(245,241,231,0.72);
+    max-width:500px;
+    margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin-bottom:44px;}
+  .btn-primary{
+    display:inline-block;
+    background:var(--copper);
+    color:var(--navy-deep);
+    padding:15px 26px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.94rem;
+    border:none;
+    cursor:pointer;
+    font-family:'Work Sans', sans-serif;
+    transition:background .2s ease;
+    text-align:center;
+  }
+  .btn-primary:hover{background:var(--copper-deep);}
+  .btn-ghost{
+    color:var(--ivory);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.94rem;
+    padding:14px 24px;
+    border:1px solid rgba(245,241,231,0.35);
+  }
+  .btn-ghost:hover{border-color:var(--ivory);}
+
+  .hero-stats{
+    display:flex;
+    gap:40px;
+    padding-top:26px;
+    border-top:1px solid rgba(245,241,231,0.14);
+  }
+  .hero-stats .stat-num{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.7rem;
+    color:var(--ivory);
+    display:block;
+    margin-bottom:4px;
+  }
+  .hero-stats p{
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(245,241,231,0.5);
+  }
+
+  .hero-form{
+    background:var(--card);
+    border-top:3px solid var(--copper);
+    padding:32px 30px;
+    position:relative; z-index:2;
+  }
+  .hero-form-tag{
+    font-size:0.7rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .hero-form h2{
+    font-size:1.4rem;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .hero-form-sub{
+    font-family:'Work Sans', sans-serif;
+    font-size:0.84rem;
+    color:rgba(30,26,18,0.55);
+    margin-bottom:22px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-form form{display:flex; flex-direction:column; gap:16px;}
+  .hero-form label{
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(30,26,18,0.6);
+    font-weight:600;
+    display:block;
+    margin-bottom:7px;
+  }
+  .hero-form input, .hero-form select{
+    width:100%;
+    border:1px solid var(--line);
+    background:var(--stone);
+    padding:11px 12px;
+    font-family:'Work Sans', sans-serif;
+    font-size:0.9rem;
+    color:var(--ink);
+  }
+  .hero-form input::placeholder{color:rgba(30,26,18,0.35);}
+  .hero-form input:focus, .hero-form select:focus{
+    outline:none;
+    border-color:var(--copper);
+  }
+  .hero-form .btn-primary{width:100%; margin-top:4px;}
+  .hero-form-foot{
+    text-align:center;
+    font-size:0.74rem;
+    color:rgba(30,26,18,0.45);
+    margin-top:4px;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:104px 0;}
+  .section-head{
+    max-width:600px;
+    margin-bottom:64px;
+  }
+  .section-head .tag{
+    font-family:'Work Sans', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--copper-deep);
+    font-size:0.78rem;
+    margin-bottom:14px;
+  }
+  .section-head h2{
+    font-size:2.1rem;
+    font-weight:700;
+    color:var(--ink);
+    padding-bottom:22px;
+    border-bottom:2px solid var(--copper);
+    display:inline-block;
+  }
+  .section-head p{
+    margin-top:18px;
+    font-family:'Work Sans', sans-serif;
+    color:rgba(30,26,18,0.62);
+    font-size:1.02rem;
+  }
+  .section-head--center{
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+  .section-head--center h2{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:fit-content;
+  }
+
+  /* ---------- PARCOURS (liste statique) ---------- */
+  .parcours{background:var(--ivory);}
+  .steps-list{border-top:1px solid var(--line); max-width:820px; margin:0 auto;}
+  .step-row{
+    display:flex;
+    align-items:flex-start;
+    gap:36px;
+    padding:34px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .step-num{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:2.6rem;
+    color:rgba(30,26,18,0.16);
+    width:76px;
+    flex-shrink:0;
+    line-height:1;
+  }
+  .step-body h3{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.22rem;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .step-body p{
+    font-family:'Work Sans', sans-serif;
+    font-size:0.94rem;
+    color:rgba(30,26,18,0.6);
+    max-width:560px;
+  }
+  .steps-more{text-align:center; margin-top:48px;}
+
+  /* ---------- TRANSVERSAL BLOCKS ---------- */
+  .transversal{background:var(--navy); color:var(--ivory); padding:96px 0;}
+  .t-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:stretch;
+  }
+  .t-col{display:flex; flex-direction:column;}
+  .t-col .tag{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    color:var(--copper);
+    font-size:0.92rem;
+    margin-bottom:12px;
+  }
+  .t-col-h2{
+    font-family:'Playfair Display', serif;
+    font-size:1.5rem;
+    color:var(--ivory);
+    margin-bottom:24px;
+  }
+  .t-card{
+    background:rgba(245,241,231,0.05);
+    border:1px solid rgba(245,241,231,0.14);
+    padding:34px 30px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .t-card h3{
+    font-size:1.1rem;
+    margin-bottom:16px;
+    color:var(--ivory);
+  }
+  .t-card ul{list-style:none;}
+  .t-card li{
+    font-size:0.9rem;
+    color:rgba(245,241,231,0.74);
+    padding:10px 0;
+    border-top:1px solid rgba(245,241,231,0.1);
+  }
+  .t-card li:first-of-type{border-top:none;}
+
+  /* ---------- DOMAINES D'INTERVENTION ---------- */
+  .domaines{background:var(--stone);}
+  .dom-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+  }
+  .dom-card{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:20px 22px;
+    border-bottom:1px solid var(--line);
+    border-right:1px solid var(--line);
+  }
+  .dom-dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--copper);
+    flex-shrink:0;
+  }
+  .dom-card h3{
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:0.94rem;
+    color:var(--ink);
+  }
+  .dom-card p{
+    font-size:0.78rem;
+    color:rgba(30,26,18,0.45);
+    margin-left:auto;
+    padding-left:12px;
+    white-space:nowrap;
+  }
+
+  /* ---------- CONCIERGERIE DETAIL ---------- */
+  .concierge-detail{background:var(--stone);}
+  .c-icon-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .c-icon-card{
+    background:var(--ivory);
+    padding:40px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:16px;
+  }
+  .c-icon-card svg{
+    width:30px; height:30px;
+    color:var(--copper-deep);
+    flex-shrink:0;
+  }
+  .c-icon-card p{
+    font-size:0.92rem;
+    color:var(--navy);
+    font-weight:500;
+  }
+
+  /* ---------- POURQUOI ---------- */
+  .pourquoi{background:var(--ivory);}
+  .p-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px 44px;
+  }
+  .p-item .p-mark{
+    width:38px; height:1px;
+    background:var(--copper);
+    margin-bottom:22px;
+  }
+  .p-item h3{
+    font-size:1.16rem;
+    color:var(--navy);
+    margin-bottom:12px;
+  }
+  .p-item p{font-size:0.92rem; color:rgba(30,26,18,0.66);}
+
+  /* ---------- FONDATEURS ---------- */
+  .fondateurs{background:var(--stone-warm);}
+  .f-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+  }
+  .f-card h3{
+    font-size:1.3rem;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .f-card .f-role{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    color:var(--copper-deep);
+    font-size:0.94rem;
+    margin-bottom:18px;
+    display:block;
+  }
+  .f-card p{font-size:0.93rem; color:rgba(30,26,18,0.68);}
+  .f-line{
+    width:100%; height:1px;
+    background:var(--line);
+    margin:26px 0 22px;
+  }
+  .f-facts{display:flex; gap:36px;}
+  .f-facts div{flex:1;}
+  .f-facts .f-num{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    color:var(--copper-deep);
+    font-size:1.3rem;
+    display:block;
+    margin-bottom:4px;
+  }
+  .f-facts p{font-size:0.8rem; color:rgba(30,26,18,0.55);}
+
+  /* ---------- PARTENAIRES ---------- */
+  .partenaires{background:var(--stone-warm); padding-bottom:64px;}
+  .marquee{
+    overflow:hidden;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:30px 0;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .marquee-track{
+    display:flex;
+    align-items:center;
+    gap:64px;
+    width:max-content;
+    animation:marquee-scroll 38s linear infinite;
+  }
+  .marquee-logo{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:1.05rem;
+    color:rgba(30,26,18,0.45);
+    white-space:nowrap;
+  }
+  @keyframes marquee-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{animation:none;}
+    .marquee{overflow-x:auto;}
+  }
+
+  /* ---------- ADHESION ---------- */
+  .adhesion{
+    background:var(--navy-deep);
+    color:var(--ivory);
+  }
+  .a-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:start;
+  }
+  .a-left .section-head{margin-bottom:32px;}
+  .a-left .section-head h2{color:var(--ivory); border-bottom-color:var(--copper);}
+  .a-left .section-head .tag{color:var(--copper);}
+  .a-flow{list-style:none; counter-reset:step;}
+  .a-flow li{
+    counter-increment:step;
+    padding:18px 0 18px 44px;
+    position:relative;
+    border-top:1px solid rgba(245,241,231,0.12);
+    font-size:0.94rem;
+    color:rgba(245,241,231,0.78);
+  }
+  .a-flow li:first-child{border-top:none;}
+  .a-flow li::before{
+    content:counter(step);
+    position:absolute; left:0; top:16px;
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    color:var(--copper);
+    font-size:1.05rem;
+  }
+  .a-flow strong{color:var(--ivory); font-weight:600;}
+
+  .price-card{
+    background:rgba(245,241,231,0.05);
+    border:1px solid rgba(245,241,231,0.18);
+    padding:44px;
+  }
+  .price-card .price{
+    font-family:'Playfair Display', serif;
+    font-size:3.4rem;
+    color:var(--copper);
+    line-height:1;
+  }
+  .price-card .price-label{
+    font-size:0.9rem;
+    color:rgba(245,241,231,0.6);
+    margin-top:10px;
+    margin-bottom:30px;
+  }
+  .price-card p.detail{
+    font-size:0.92rem;
+    color:rgba(245,241,231,0.78);
+    margin-bottom:28px;
+  }
+  .price-card .btn-primary{width:100%;}
+
+  /* ---------- TEMOIGNAGES ---------- */
+  .temoignages{background:var(--ivory);}
+  .temoin-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .temoin-card{
+    background:var(--ivory);
+    padding:36px 32px;
+  }
+  .temoin-quote{
+    font-family:'Playfair Display', serif;
+    font-size:1.05rem;
+    font-style:italic;
+    color:var(--navy);
+    line-height:1.5;
+    margin-bottom:24px;
+  }
+  .temoin-name{
+    font-size:0.84rem;
+    color:rgba(30,26,18,0.55);
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .temoin-name span{color:rgba(30,26,18,0.4);}
+  .temoin-cta{
+    text-align:center;
+    margin-top:48px;
+  }
+  .btn-ghost-dark{
+    color:var(--navy);
+    text-decoration:none;
+    font-size:0.95rem;
+    font-weight:600;
+    border-bottom:1px solid var(--copper);
+    padding-bottom:3px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--navy-deep);
+    color:rgba(245,241,231,0.6);
+    padding:56px 0 40px;
+  }
+  .foot-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    flex-wrap:wrap; gap:30px;
+    padding-bottom:36px;
+    border-bottom:1px solid rgba(245,241,231,0.12);
+  }
+  .foot-brand{font-family:'Playfair Display', serif; font-size:1.15rem; color:var(--ivory);}
+  .foot-links{display:flex; gap:32px; font-size:0.86rem;}
+  .foot-links a{text-decoration:none; color:rgba(245,241,231,0.6);}
+  .foot-bottom{
+    display:flex; justify-content:space-between;
+    padding-top:26px;
+    font-size:0.8rem;
+    color:rgba(245,241,231,0.4);
+    flex-wrap:wrap; gap:12px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .hero h1{font-size:2.3rem;}
+    .steps{grid-template-columns:1fr;}
+    .step{border-right:none; border-bottom:1px solid var(--line); padding:28px 0;}
+    .t-grid, .c-icon-grid, .p-grid, .f-grid, .a-inner, .contact-inner, .part-grid, .hero-grid, .temoin-grid{grid-template-columns:1fr;}
+    .dom-grid{grid-template-columns:repeat(2, 1fr);}
+    .t-card{padding:34px 26px;}
+    .navlinks{display:none;}
+    section{padding:72px 0;}
+    .hero{padding:88px 0 64px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <strong>Guichet unique</strong><span>investisseurs Maroc &amp; Espagne — adhésion de lancement 200 €</span>
+  </div>
+</div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <div class="brand-mark">E</div>
+      <div class="brand-text">Estrecho Capital<small>Guichet unique investisseurs</small></div>
+    </div>
+    <div class="navlinks">
+      <a href="#parcours">Approche</a>
+      <a href="#domaines">Domaines d'intervention</a>
+      <a href="#financement">Solutions de financement</a>
+      <a href="#guichet-administratif">Guichet administratif</a>
+      <a href="#conciergerie">Conciergerie</a>
+    </div>
+    <a href="#contact" class="nav-cta">Nous contacter</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-inner">
+      <p class="eyebrow">Un seul interlocuteur, du Détroit jusqu'à l'exploitation</p>
+      <h1>Investir au Maroc,<br>accompagné <span class="accent">de bout en bout.</span></h1>
+      <p class="lede">Estrecho Capital est le guichet unique des investisseurs espagnols au Maroc — de l'étude de faisabilité jusqu'à la livraison du projet clé en main, avec une conciergerie qui vous suit à chaque déplacement.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Démarrer votre étude</a>
+        <a href="#parcours" class="btn-ghost">Voir notre approche</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="stat-num">2 rives</span><p>Maroc &amp; Espagne</p></div>
+        <div><span class="stat-num">4 étapes</span><p>Un seul interlocuteur</p></div>
+        <div><span class="stat-num">200 €</span><p>Adhésion de départ</p></div>
+      </div>
+    </div>
+
+    <div class="hero-form" id="contact">
+      <p class="hero-form-tag">Premier échange</p>
+      <h2>Parlons de votre projet</h2>
+      <p class="hero-form-sub">Gratuit, sans engagement. Réponse sous 48h.</p>
+      <form>
+        <div>
+          <label for="h-secteur">Secteur du projet</label>
+          <select id="h-secteur" name="secteur">
+            <option>Immobilier &amp; hôtellerie</option>
+            <option>Industrie &amp; manufacturing</option>
+            <option>Services</option>
+            <option>Autre / non défini</option>
+          </select>
+        </div>
+        <div>
+          <label for="h-nom">Nom</label>
+          <input type="text" id="h-nom" name="nom" placeholder="Votre nom">
+        </div>
+        <div>
+          <label for="h-email">Email</label>
+          <input type="email" id="h-email" name="email" placeholder="votre@email.com">
+        </div>
+        <button type="submit" class="btn-primary">Demander mon premier échange</button>
+        <p class="hero-form-foot">Gratuit • Sans engagement • Réponse sous 48h</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="parcours" id="parcours">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <p class="tag">Notre approche</p>
+      <h2>Un parcours en quatre étapes, un seul interlocuteur</h2>
+      <p>Chaque étape s'appuie sur la précédente. Vous n'avez jamais à recomposer un nouvel intervenant en cours de route.</p>
+    </div>
+
+    <div class="steps-list">
+      <div class="step-row">
+        <span class="step-num">01</span>
+        <div class="step-body">
+          <h3>Étude &amp; cadrage</h3>
+          <p>Entretien de cadrage, étude de faisabilité réglementaire, benchmark sectoriel et identification des premières opportunités. Un rapport de cadrage clôt cette étape.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <span class="step-num">02</span>
+        <div class="step-body">
+          <h3>Mise en relation &amp; structuration</h3>
+          <p>Sourcing de partenaires, terrains ou cibles au Maroc, structuration juridique et financière du montage, avec nos partenaires bancaires et notariés.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <span class="step-num">03</span>
+        <div class="step-body">
+          <h3>Réalisation clé en main</h3>
+          <p>Pilotage jusqu'à la mise en exploitation : immatriculation, suivi de chantier ou de transaction, mise en conformité, démarrage opérationnel.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps-more">
+      <a href="approche.html" class="btn-primary">En savoir plus</a>
+    </div>
+  </div>
+</section>
+
+<section class="domaines" id="domaines">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Tous secteurs</p>
+      <h2>Nos domaines d'intervention</h2>
+      <p>Estrecho Capital n'est pas spécialisé sur un secteur — la méthode et le réseau s'adaptent à votre marché.</p>
+    </div>
+
+    <div class="dom-grid">
+      <div class="dom-card"><span class="dom-dot"></span><h3>Agriculture</h3><p>Agroalimentaire &amp; filières</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Industrie</h3><p>Manufacturing &amp; production</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Tourisme</h3><p>Hôtellerie &amp; loisirs</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Import / Export</h3><p>Commerce international</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>FinTech</h3><p>Services financiers</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Immobilier</h3><p>Résidentiel &amp; tertiaire</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Énergie</h3><p>Renouvelables &amp; utilities</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Santé</h3><p>Biotech &amp; équipements</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Logistique</h3><p>Transport &amp; supply chain</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Technologies</h3><p>Digital &amp; IT</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Éducation</h3><p>Formation professionnelle</p></div>
+      <div class="dom-card"><span class="dom-dot"></span><h3>Commerce</h3><p>Distribution &amp; retail</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="transversal">
+  <div class="wrap">
+    <div class="t-grid">
+      <div class="t-col" id="financement">
+        <p class="tag">Nos solutions de financement</p>
+        <h2 class="t-col-h2">Un accès bancaire des deux côtés du Détroit</h2>
+        <div class="t-card">
+          <h3>Financement &amp; structuration bancaire</h3>
+          <ul>
+            <li>Montage du plan de financement, Maroc et Espagne</li>
+            <li>Mise en relation avec un réseau bancaire de premier plan</li>
+            <li>Structuration de montages complexes et transfrontaliers</li>
+            <li>Accompagnement au refinancement si le projet évolue</li>
+          </ul>
+        </div>
+      </div>
+      <div class="t-col" id="guichet-administratif">
+        <p class="tag">Notre guichet administratif</p>
+        <h2 class="t-col-h2">Créer et faire vivre votre société au Maroc</h2>
+        <div class="t-card">
+          <h3>Juridique, fiscal &amp; comptable</h3>
+          <ul>
+            <li>Création de société et formalités d'immatriculation</li>
+            <li>Choix de la structure : filiale, succursale, joint-venture</li>
+            <li>Conformité fiscale et douanière</li>
+            <li>Suivi comptable récurrent, via nos partenaires mandatés</li>
+            <li>Assurances Entreprises et Particulier</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="concierge-detail" id="conciergerie">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Notre conciergerie</p>
+      <h2>À vos côtés dès le premier voyage d'étude</h2>
+      <p>Une conciergerie qui couvre chaque déplacement d'affaires — pour que rien ne vous détourne du projet lui-même.</p>
+    </div>
+
+    <div class="c-icon-grid">
+      <div class="c-icon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15l-7-3-3-7-1.5.6 1.7 6.9-5.1 1.9-2.1-1.6-1.3.5 1.9 3.1.1 3.6 1.2-.5.6-2.6 5.1-1.9 3.6 5.9 1.5-.6z"/></svg>
+        <p>Vols</p>
+      </div>
+      <div class="c-icon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18v2M21 18v2"/><path d="M3 13V8a1 1 0 0 1 1-1h6v5"/><circle cx="7.5" cy="9.5" r="1"/></svg>
+        <p>Hébergement</p>
+      </div>
+      <div class="c-icon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17a2 2 0 0 1-2-2v-2.5l2-4.5a2 2 0 0 1 1.8-1.2h6.4a2 2 0 0 1 1.8 1.2l2 4.5V15a2 2 0 0 1-2 2"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg>
+        <p>Location de voiture</p>
+      </div>
+      <div class="c-icon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="11" rx="1.5"/><path d="M2 19h20M9 19v-3M15 19v-3"/></svg>
+        <p>Espace coworking</p>
+      </div>
+      <div class="c-icon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a4.5 4 0 1 1 1.6 3.1L6 16l.8-2.6A4 4 0 0 1 8 12z"/><path d="M15.5 8.5a4 3.6 0 0 1 3.7 5.3L20 17l-3.3-1a4 3.6 0 0 1-1.2-.3"/></svg>
+        <p>Interprète</p>
+      </div>
+      <div class="c-icon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        <p>Et plus, sur demande</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pourquoi">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Pourquoi Estrecho Capital</p>
+      <h2>Une double culture, un seul niveau d'exigence</h2>
+    </div>
+    <div class="p-grid">
+      <div class="p-item">
+        <div class="p-mark"></div>
+        <h3>Deux rives, une même équipe</h3>
+        <p>Fondateurs de nationalité espagnole installés sur le terrain marocain — nous parlons vos deux langues, administratives comme culturelles.</p>
+      </div>
+      <div class="p-item">
+        <div class="p-mark"></div>
+        <h3>Un accès bancaire rare</h3>
+        <p>Un associé issu du secteur bancaire, avec un réseau construit sur les deux rives du Détroit — un accès que peu de cabinets peuvent offrir en interne.</p>
+      </div>
+      <div class="p-item">
+        <div class="p-mark"></div>
+        <h3>Un terrain que nous connaissons</h3>
+        <p>Une lecture fine du cadre réglementaire marocain et de ses acteurs, construite sur le terrain plutôt que sur des dossiers théoriques.</p>
+      </div>
+      <div class="p-item">
+        <div class="p-mark"></div>
+        <h3>Une culture du risque maîtrisé</h3>
+        <p>Une expertise assurantielle au cœur de l'équipe fondatrice — une sensibilité rare à la protection des projets, présente dans chaque montage que nous structurons.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fondateurs" id="fondateurs">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="tag">Les fondateurs</p>
+      <h2>Deux profils, une complémentarité</h2>
+    </div>
+    <div class="f-grid">
+      <div class="f-card">
+        <h3>Un fondateur opérationnel</h3>
+        <span class="f-role">Pilotage des projets &amp; réseau marocain</span>
+        <p>Entrepreneur de nationalité espagnole établi au Maroc, à la tête d'un réseau professionnel local construit sur plusieurs années d'activité sur le terrain.</p>
+        <div class="f-line"></div>
+        <div class="f-facts">
+          <div>
+            <span class="f-num">ES</span>
+            <p>Nationalité espagnole</p>
+          </div>
+          <div>
+            <span class="f-num">MA</span>
+            <p>Basé au Maroc, sur le terrain</p>
+          </div>
+        </div>
+      </div>
+      <div class="f-card">
+        <h3>Un associé bancaire</h3>
+        <span class="f-role">Financement &amp; structuration</span>
+        <p>Banquier de renom, associé silencieux d'Estrecho Capital, apportant un accès direct aux solutions de financement et un réseau institutionnel de premier plan.</p>
+        <div class="f-line"></div>
+        <div class="f-facts">
+          <div>
+            <span class="f-num">Banque</span>
+            <p>Secteur d'expertise</p>
+          </div>
+          <div>
+            <span class="f-num">Silencieux</span>
+            <p>Rôle dans la structure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partenaires" id="partenaires">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:44px;">
+      <p class="tag">Nos partenaires</p>
+      <h2>Un réseau qui existe déjà</h2>
+      <p>Estrecho Capital s'appuie sur le réseau professionnel de Roots Club (ex-Africa Business Club) et sur ses partenaires institutionnels, bancaires et prestataires, des deux côtés du Détroit.</p>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-logo">Roots Club</span>
+      <span class="marquee-logo">Chambre de Commerce Hispano-Marocaine</span>
+      <span class="marquee-logo">AMDIE — Morocco Now</span>
+      <span class="marquee-logo">Banque Partenaire Espagne</span>
+      <span class="marquee-logo">Banque Partenaire Maroc</span>
+      <span class="marquee-logo">Cabinet d'Avocats d'Affaires</span>
+      <span class="marquee-logo">Expert-Comptable</span>
+      <span class="marquee-logo">Notaire</span>
+      <span class="marquee-logo">Roots Club</span>
+      <span class="marquee-logo">Chambre de Commerce Hispano-Marocaine</span>
+      <span class="marquee-logo">AMDIE — Morocco Now</span>
+      <span class="marquee-logo">Banque Partenaire Espagne</span>
+      <span class="marquee-logo">Banque Partenaire Maroc</span>
+      <span class="marquee-logo">Cabinet d'Avocats d'Affaires</span>
+      <span class="marquee-logo">Expert-Comptable</span>
+      <span class="marquee-logo">Notaire</span>
+    </div>
+  </div>
+</section>
+
+<section class="adhesion">
+  <div class="wrap a-inner">
+    <div class="a-left">
+      <div class="section-head">
+        <p class="tag">Comment démarrer</p>
+        <h2>Une adhésion symbolique, déductible de nos honoraires</h2>
+      </div>
+      <ul class="a-flow">
+        <li><strong>Premier échange</strong> — un court entretien pour cadrer votre projet et son horizon.</li>
+        <li><strong>Adhésion de 200 €</strong> — elle déclenche le démarrage de l'étude de cadrage.</li>
+        <li><strong>Proposition de mission</strong> — à l'issue de l'étude, nous revenons avec des honoraires chiffrés pour la suite.</li>
+        <li><strong>Signature &amp; démarrage</strong> — le projet entre en phase de structuration, l'adhésion est déduite de nos honoraires.</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <div class="price">200 €</div>
+      <p class="price-label">Adhésion de démarrage, déductible</p>
+      <p class="detail">Ce montant couvre le lancement de votre étude de cadrage et filtre les échanges pour se concentrer sur les projets réellement engagés. Il est intégralement déduit de nos honoraires si vous poursuivez au-delà de l'étude.</p>
+      <a href="#contact" class="btn-primary">Démarrer mon dossier</a>
+    </div>
+  </div>
+</section>
+
+<section class="temoignages">
+  <div class="wrap">
+    <div class="section-head" style="margin:0 auto 56px; text-align:center;">
+      <p class="tag">Témoignages</p>
+      <h2>Ce que disent nos partenaires</h2>
+    </div>
+    <div class="temoin-grid">
+      <div class="temoin-card">
+        <p class="temoin-quote">« Un vivier de contacts qualifiés et un cadre sérieux pour développer des affaires entre le Maroc et l'international — nous connaissons ce niveau d'exigence depuis Roots Club. »</p>
+        <p class="temoin-name">Réseau Roots Club<span>Rabat</span></p>
+      </div>
+      <div class="temoin-card">
+        <p class="temoin-quote">Vos premiers retours d'investisseurs et de partenaires trouveront leur place ici.</p>
+        <p class="temoin-name">À venir<span>Premiers dossiers Estrecho Capital</span></p>
+      </div>
+      <div class="temoin-card">
+        <p class="temoin-quote">Vos premiers retours d'investisseurs et de partenaires trouveront leur place ici.</p>
+        <p class="temoin-name">À venir<span>Premiers dossiers Estrecho Capital</span></p>
+      </div>
+    </div>
+    <div class="temoin-cta">
+      <a href="#contact" class="btn-ghost-dark">Démarrer votre étude</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">Estrecho Capital</div>
+      <div class="foot-links">
+        <a href="#parcours">Notre approche</a>
+        <a href="#domaines">Domaines</a>
+        <a href="#financement">Financement</a>
+        <a href="#guichet-administratif">Guichet administratif</a>
+        <a href="#conciergerie">Conciergerie</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Estrecho Capital — Maroc &amp; Espagne</span>
+      <span>Mentions légales</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
