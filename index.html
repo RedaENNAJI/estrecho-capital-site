@@ -637,24 +637,68 @@
     padding-bottom:3px;
   }
 
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{
+    background:var(--navy);
+    color:var(--ivory);
+    padding:88px 0;
+    text-align:center;
+  }
+  .cta-final h2{
+    font-size:2.1rem;
+    color:var(--ivory);
+    margin-bottom:18px;
+  }
+  .cta-final p{
+    font-family:'Work Sans', sans-serif;
+    font-size:1.02rem;
+    color:rgba(245,241,231,0.68);
+    max-width:480px;
+    margin:0 auto 36px;
+  }
+
   /* ---------- FOOTER ---------- */
   footer{
     background:var(--navy-deep);
     color:rgba(245,241,231,0.6);
-    padding:56px 0 40px;
+    padding:64px 0 0;
   }
-  .foot-top{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    flex-wrap:wrap; gap:30px;
-    padding-bottom:36px;
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:48px;
     border-bottom:1px solid rgba(245,241,231,0.12);
   }
-  .foot-brand{font-family:'Playfair Display', serif; font-size:1.15rem; color:var(--ivory);}
-  .foot-links{display:flex; gap:32px; font-size:0.86rem;}
-  .foot-links a{text-decoration:none; color:rgba(245,241,231,0.6);}
+  .foot-heading{
+    font-size:0.76rem;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:rgba(245,241,231,0.45);
+    margin-bottom:18px;
+  }
+  .foot-col--brand .foot-heading{
+    font-family:'Playfair Display', serif;
+    font-size:1.1rem;
+    font-weight:700;
+    letter-spacing:0;
+    text-transform:none;
+    color:var(--ivory);
+  }
+  .foot-blurb{font-size:0.88rem; color:rgba(245,241,231,0.6); margin-bottom:18px; max-width:280px;}
+  .foot-contact{font-size:0.86rem; color:rgba(245,241,231,0.5); line-height:1.7;}
+  .foot-col a{
+    display:block;
+    text-decoration:none;
+    font-size:0.9rem;
+    color:rgba(245,241,231,0.68);
+    margin-bottom:13px;
+  }
+  .foot-col a:hover{color:var(--copper);}
   .foot-bottom{
     display:flex; justify-content:space-between;
-    padding-top:26px;
+    padding:22px 0;
     font-size:0.8rem;
     color:rgba(245,241,231,0.4);
     flex-wrap:wrap; gap:12px;
@@ -665,7 +709,7 @@
     .hero h1{font-size:2.3rem;}
     .steps{grid-template-columns:1fr;}
     .step{border-right:none; border-bottom:1px solid var(--line); padding:28px 0;}
-    .t-grid, .c-icon-grid, .p-grid, .f-grid, .a-inner, .contact-inner, .part-grid, .hero-grid, .temoin-grid{grid-template-columns:1fr;}
+    .t-grid, .c-icon-grid, .p-grid, .f-grid, .a-inner, .contact-inner, .part-grid, .hero-grid, .temoin-grid, .foot-grid{grid-template-columns:1fr;}
     .dom-grid{grid-template-columns:repeat(2, 1fr);}
     .t-card{padding:34px 26px;}
     .navlinks{display:none;}
@@ -1097,23 +1141,43 @@
   </div>
 </section>
 
-<footer>
+<section class="cta-final">
   <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">Estrecho Capital</div>
-      <div class="foot-links">
-        <a href="#parcours">Notre approche</a>
-        <a href="#domaines">Domaines</a>
-        <a href="#financement">Financement</a>
-        <a href="#guichet-administratif">Guichet administratif</a>
-        <a href="#conciergerie">Conciergerie</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <h2>Démarrez votre étude dès aujourd'hui</h2>
+    <p>Un premier échange gratuit, sans engagement, pour cadrer votre projet au Maroc.</p>
+    <a href="#contact" class="btn-primary">Parlons de votre projet</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-col foot-col--brand">
+      <p class="foot-heading">Estrecho Capital</p>
+      <p class="foot-blurb">Le guichet unique des investisseurs espagnols au Maroc — de l'étude de faisabilité jusqu'au projet clé en main.</p>
+      <p class="foot-contact">Maroc &amp; Espagne<br>contact@estrecho-capital.com</p>
     </div>
-    <div class="foot-bottom">
-      <span>Estrecho Capital — Maroc &amp; Espagne</span>
-      <span>Mentions légales</span>
+    <div class="foot-col">
+      <p class="foot-heading">Navigation</p>
+      <a href="#parcours">Approche</a>
+      <a href="#domaines">Activités</a>
+      <a href="#financement">Financement</a>
     </div>
+    <div class="foot-col">
+      <p class="foot-heading">Services</p>
+      <a href="#guichet-administratif">Formalités</a>
+      <a href="#conciergerie">Conciergerie</a>
+      <a href="#">Mon Espace</a>
+    </div>
+    <div class="foot-col">
+      <p class="foot-heading">Informations</p>
+      <a href="#contact">Contact</a>
+      <a href="#">Confidentialité</a>
+      <a href="#">Mentions légales</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2025 Estrecho Capital. Tous droits réservés.</span>
+    <span>Confidentialité · Mentions légales</span>
   </div>
 </footer>
 
