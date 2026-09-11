@@ -334,8 +334,8 @@
   .steps-more{text-align:center; margin-top:48px;}
 
   /* ---------- TRANSVERSAL BLOCKS ---------- */
-  .transversal{background:var(--navy); color:var(--ivory); padding:96px 0;}
-  .transversal-light{background:var(--stone-warm); color:var(--ink); padding:96px 0;}
+  .transversal-light{background:var(--ivory); color:var(--ink); padding:96px 0;}
+  .transversal-light.bg-b{background:var(--stone-warm);}
   .transversal-light .tag{
     font-family:'Work Sans', sans-serif;
     font-weight:700;
@@ -370,47 +370,9 @@
     border-top:1px solid var(--line);
   }
   .transversal-light .t-card li:first-of-type{border-top:none;}
-  .transversal .tag{
-    font-family:'Work Sans', sans-serif;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:0.1em;
-    color:var(--copper);
-    font-size:0.78rem;
-    margin-bottom:14px;
-  }
-  .t-col-h2{
-    font-family:'Playfair Display', serif;
-    font-size:2.1rem;
-    font-weight:700;
-    color:var(--ivory);
-    padding-bottom:22px;
-    border-bottom:2px solid var(--copper);
-    display:inline-block;
-    margin-bottom:32px;
-  }
-  .t-card{
-    background:rgba(245,241,231,0.05);
-    border:1px solid rgba(245,241,231,0.14);
-    padding:34px 30px;
-  }
-  .t-card--solo{max-width:640px;}
-  .t-card h3{
-    font-size:1.1rem;
-    margin-bottom:16px;
-    color:var(--ivory);
-  }
-  .t-card ul{list-style:none;}
-  .t-card li{
-    font-size:0.9rem;
-    color:rgba(245,241,231,0.74);
-    padding:10px 0;
-    border-top:1px solid rgba(245,241,231,0.1);
-  }
-  .t-card li:first-of-type{border-top:none;}
 
   /* ---------- DOMAINES D'INTERVENTION ---------- */
-  .domaines{background:var(--stone);}
+  .domaines{background:var(--stone-warm);}
   .dom-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -445,7 +407,7 @@
   }
 
   /* ---------- CONCIERGERIE DETAIL ---------- */
-  .concierge-detail{background:var(--stone);}
+  .concierge-detail{background:var(--ivory);}
   .c-icon-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -474,7 +436,7 @@
   }
 
   /* ---------- POURQUOI ---------- */
-  .pourquoi{background:var(--ivory);}
+  .pourquoi{background:var(--stone-warm);}
   .p-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -493,7 +455,7 @@
   .p-item p{font-size:0.92rem; color:rgba(30,26,18,0.66);}
 
   /* ---------- FONDATEURS ---------- */
-  .fondateurs{background:var(--stone-warm);}
+  .fondateurs{background:var(--ivory);}
   .f-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -531,7 +493,7 @@
   .f-facts p{font-size:0.8rem; color:rgba(30,26,18,0.55);}
 
   /* ---------- PARTENAIRES ---------- */
-  .partenaires{background:var(--stone); padding-bottom:64px;}
+  .partenaires{background:var(--stone-warm); padding-bottom:64px;}
   .marquee{
     overflow:hidden;
     border-top:1px solid var(--line);
@@ -839,7 +801,7 @@
   </div>
 </section>
 
-<section class="transversal" id="financement">
+<section class="transversal-light" id="financement">
   <div class="wrap">
     <p class="tag">Nos solutions de financement</p>
     <h2 class="t-col-h2">Un accès bancaire des deux côtés du Détroit</h2>
@@ -855,7 +817,7 @@
   </div>
 </section>
 
-<section class="transversal-light" id="guichet-administratif">
+<section class="transversal-light bg-b" id="guichet-administratif">
   <div class="wrap">
     <p class="tag">Notre guichet administratif</p>
     <h2 class="t-col-h2">Créer et faire vivre votre société au Maroc</h2>
