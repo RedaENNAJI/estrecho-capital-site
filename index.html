@@ -345,14 +345,7 @@
 
   /* ---------- TRANSVERSAL BLOCKS ---------- */
   .transversal{background:var(--navy); color:var(--ivory); padding:96px 0;}
-  .t-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:56px;
-    align-items:stretch;
-  }
-  .t-col{display:flex; flex-direction:column;}
-  .t-col .tag{
+  .transversal .tag{
     font-family:'Playfair Display', serif;
     font-style:italic;
     color:var(--copper);
@@ -363,16 +356,14 @@
     font-family:'Playfair Display', serif;
     font-size:1.5rem;
     color:var(--ivory);
-    margin-bottom:24px;
+    margin-bottom:32px;
   }
   .t-card{
     background:rgba(245,241,231,0.05);
     border:1px solid rgba(245,241,231,0.14);
     padding:34px 30px;
-    flex:1;
-    display:flex;
-    flex-direction:column;
   }
+  .t-card--solo{max-width:640px;}
   .t-card h3{
     font-size:1.1rem;
     margin-bottom:16px;
@@ -816,36 +807,35 @@
   </div>
 </section>
 
-<section class="transversal">
+<section class="transversal" id="financement">
   <div class="wrap">
-    <div class="t-grid">
-      <div class="t-col" id="financement">
-        <p class="tag">Nos solutions de financement</p>
-        <h2 class="t-col-h2">Un accès bancaire des deux côtés du Détroit</h2>
-        <div class="t-card">
-          <h3>Financement &amp; structuration bancaire</h3>
-          <ul>
-            <li>Montage du plan de financement, Maroc et Espagne</li>
-            <li>Mise en relation avec un réseau bancaire de premier plan</li>
-            <li>Structuration de montages complexes et transfrontaliers</li>
-            <li>Accompagnement au refinancement si le projet évolue</li>
-          </ul>
-        </div>
-      </div>
-      <div class="t-col" id="guichet-administratif">
-        <p class="tag">Notre guichet administratif</p>
-        <h2 class="t-col-h2">Créer et faire vivre votre société au Maroc</h2>
-        <div class="t-card">
-          <h3>Juridique, fiscal &amp; comptable</h3>
-          <ul>
-            <li>Création de société et formalités d'immatriculation</li>
-            <li>Choix de la structure : filiale, succursale, joint-venture</li>
-            <li>Conformité fiscale et douanière</li>
-            <li>Suivi comptable récurrent, via nos partenaires mandatés</li>
-            <li>Assurances Entreprises et Particulier</li>
-          </ul>
-        </div>
-      </div>
+    <p class="tag">Nos solutions de financement</p>
+    <h2 class="t-col-h2">Un accès bancaire des deux côtés du Détroit</h2>
+    <div class="t-card t-card--solo">
+      <h3>Financement &amp; structuration bancaire</h3>
+      <ul>
+        <li>Montage du plan de financement, Maroc et Espagne</li>
+        <li>Mise en relation avec un réseau bancaire de premier plan</li>
+        <li>Structuration de montages complexes et transfrontaliers</li>
+        <li>Accompagnement au refinancement si le projet évolue</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="transversal" id="guichet-administratif">
+  <div class="wrap">
+    <p class="tag">Notre guichet administratif</p>
+    <h2 class="t-col-h2">Créer et faire vivre votre société au Maroc</h2>
+    <div class="t-card t-card--solo">
+      <h3>Juridique, fiscal &amp; comptable</h3>
+      <ul>
+        <li>Création de société et formalités d'immatriculation</li>
+        <li>Choix de la structure : filiale, succursale, joint-venture</li>
+        <li>Conformité fiscale et douanière</li>
+        <li>Suivi comptable récurrent, via nos partenaires mandatés</li>
+        <li>Assurances Entreprises et Particulier</li>
+      </ul>
     </div>
   </div>
 </section>
