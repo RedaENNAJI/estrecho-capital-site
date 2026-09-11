@@ -335,7 +335,41 @@
 
   /* ---------- TRANSVERSAL BLOCKS ---------- */
   .transversal{background:var(--navy); color:var(--ivory); padding:96px 0;}
-  .transversal--deep{background:var(--navy-deep);}
+  .transversal-light{background:var(--stone-warm); color:var(--ink); padding:96px 0;}
+  .transversal-light .tag{
+    font-family:'Work Sans', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--copper-deep);
+    font-size:0.78rem;
+    margin-bottom:14px;
+  }
+  .transversal-light .t-col-h2{
+    font-family:'Playfair Display', serif;
+    font-size:2.1rem;
+    font-weight:700;
+    color:var(--ink);
+    padding-bottom:22px;
+    border-bottom:2px solid var(--copper);
+    display:inline-block;
+    margin-bottom:32px;
+  }
+  .transversal-light .t-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:34px 30px;
+    max-width:640px;
+  }
+  .transversal-light .t-card h3{font-size:1.1rem; margin-bottom:16px; color:var(--ink);}
+  .transversal-light .t-card ul{list-style:none;}
+  .transversal-light .t-card li{
+    font-size:0.9rem;
+    color:rgba(30,26,18,0.66);
+    padding:10px 0;
+    border-top:1px solid var(--line);
+  }
+  .transversal-light .t-card li:first-of-type{border-top:none;}
   .transversal .tag{
     font-family:'Work Sans', sans-serif;
     font-weight:700;
@@ -411,7 +445,7 @@
   }
 
   /* ---------- CONCIERGERIE DETAIL ---------- */
-  .concierge-detail{background:var(--stone-warm);}
+  .concierge-detail{background:var(--stone);}
   .c-icon-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -821,7 +855,7 @@
   </div>
 </section>
 
-<section class="transversal transversal--deep" id="guichet-administratif">
+<section class="transversal-light" id="guichet-administratif">
   <div class="wrap">
     <p class="tag">Notre guichet administratif</p>
     <h2 class="t-col-h2">Créer et faire vivre votre société au Maroc</h2>
