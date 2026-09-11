@@ -59,14 +59,25 @@
   .topbar .wrap{
     display:flex;
     align-items:center;
-    justify-content:center;
-    height:34px;
+    justify-content:space-between;
+    height:36px;
     font-size:0.76rem;
     letter-spacing:0.01em;
   }
-  .topbar strong{font-weight:600; color:var(--copper);}
-  .topbar span{opacity:0.75; color:var(--stone); margin-left:6px;}
-  .topbar a{display:none;}
+  .topbar-text strong{font-weight:600; color:var(--copper);}
+  .topbar-text span{opacity:0.75; color:var(--stone); margin-left:6px;}
+  .topbar-cta{
+    display:inline-block;
+    background:var(--copper);
+    color:var(--navy-deep);
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.7rem;
+    padding:4px 14px;
+    white-space:nowrap;
+    transition:background .2s ease;
+  }
+  .topbar-cta:hover{background:#ffce33;}
 
   /* ---------- NAV ---------- */
   header{
@@ -91,8 +102,8 @@
     font-size:1.1rem;
     flex-shrink:0;
   }
-  .brand-text{font-family:'Playfair Display', serif; font-size:1.16rem; color:var(--ink); line-height:1.2;}
-  .brand-text small{display:block; font-family:'Work Sans', sans-serif; font-size:0.62rem; letter-spacing:0.12em; color:rgba(30,26,18,0.5); font-weight:600; margin-top:2px;}
+  .brand-text{font-family:'Playfair Display', serif; font-weight:700; font-size:1.16rem; color:var(--ink); line-height:1.2;}
+  .brand-text small{display:block; font-family:'Work Sans', sans-serif; font-size:0.62rem; letter-spacing:0.12em; color:var(--copper-deep); font-weight:600; margin-top:2px;}
   .navlinks{display:flex; gap:22px; font-size:0.85rem;}
   .navlinks a{
     color:rgba(30,26,18,0.7);
@@ -102,14 +113,16 @@
   .navlinks a:hover{color:var(--navy);}
   .nav-cta{
     display:inline-block;
-    padding:9px 16px;
+    margin-left:20px;
+    padding:7px 14px;
     background:var(--navy);
     border:none;
     color:var(--ivory);
     text-decoration:none;
-    font-size:0.8rem;
+    font-size:0.74rem;
     font-weight:600;
     white-space:nowrap;
+    flex-shrink:0;
     transition:background .2s ease;
   }
   .nav-cta:hover{background:var(--navy-deep);}
@@ -683,7 +696,8 @@
 
 <div class="topbar">
   <div class="wrap">
-    <strong>Guichet unique</strong><span>investisseurs Maroc &amp; Espagne — adhésion de lancement 200 €</span>
+    <div class="topbar-text"><strong>Guichet unique</strong><span>investisseurs Maroc &amp; Espagne</span></div>
+    <a href="#" class="topbar-cta">Mon Espace</a>
   </div>
 </div>
 
@@ -695,9 +709,9 @@
     </div>
     <div class="navlinks">
       <a href="#parcours">Approche</a>
-      <a href="#domaines">Domaines d'intervention</a>
-      <a href="#financement">Solutions de financement</a>
-      <a href="#guichet-administratif">Guichet administratif</a>
+      <a href="#domaines">Activités</a>
+      <a href="#financement">Financement</a>
+      <a href="#guichet-administratif">Formalités</a>
       <a href="#conciergerie">Conciergerie</a>
     </div>
     <a href="#contact" class="nav-cta">Nous contacter</a>
