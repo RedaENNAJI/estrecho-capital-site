@@ -37,7 +37,7 @@ a{color:inherit; text-decoration:none;}
 
 .sidebar-nav{flex:1; padding:14px 0;}
 .nav-group-label{font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,241,231,0.3); padding:16px 20px 8px;}
-.nav-item{display:flex; align-items:center; gap:11px; padding:9px 20px; font-size:0.86rem; font-weight:500; color:rgba(245,241,231,0.7); cursor:pointer; border-left:3px solid transparent;}
+.nav-item{display:flex; align-items:center; gap:11px; padding:9px 20px; font-size:0.86rem; font-weight:500; color:rgba(245,241,231,0.7); cursor:pointer; border-left:3px solid transparent; transition:background .15s ease, color .15s ease, border-color .15s ease;}
 .nav-item svg{width:16px; height:16px; flex-shrink:0; opacity:0.75;}
 .nav-item:hover{background:rgba(245,241,231,0.04); color:var(--ivory);}
 .nav-item.active{background:rgba(250,189,0,0.1); border-left-color:var(--copper); color:var(--ivory); font-weight:600;}
@@ -103,6 +103,34 @@ a{color:inherit; text-decoration:none;}
 .doc-status.ok{color:var(--green);}
 
 .stub-card{background:var(--card); border:1px solid var(--line); padding:60px 20px; text-align:center; color:rgba(30,26,18,0.42); font-size:0.92rem;}
+
+.track-list{border-top:1px solid var(--line);}
+.track-step{border-bottom:1px solid var(--line); background:var(--card);}
+.track-trigger{width:100%; display:flex; align-items:center; gap:16px; background:none; border:none; padding:16px 4px; cursor:pointer; text-align:left; font-family:'Work Sans', sans-serif;}
+.track-num{font-family:'Playfair Display', serif; font-weight:700; font-size:1rem; color:rgba(30,26,18,0.28); width:28px; flex-shrink:0;}
+.track-step.done .track-num{color:var(--green);}
+.track-step.current .track-num{color:var(--copper-deep);}
+.track-title{flex:1; font-size:0.92rem; font-weight:600; color:var(--ink);}
+.track-status{font-size:0.72rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:4px 10px; border-radius:12px; color:rgba(30,26,18,0.4); background:rgba(30,26,18,0.06);}
+.track-step.done .track-status{color:var(--green); background:rgba(31,157,99,0.12);}
+.track-step.current .track-status{color:var(--copper-deep); background:rgba(250,189,0,0.14);}
+.track-chevron{font-family:'Playfair Display', serif; font-size:1.2rem; color:rgba(30,26,18,0.35); transition:transform .2s ease; flex-shrink:0;}
+.track-step.open .track-chevron{transform:rotate(45deg);}
+.track-detail{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+.track-step.open .track-detail{max-height:160px;}
+.track-detail p{padding:0 4px 20px 44px; font-size:0.86rem; color:rgba(30,26,18,0.6); max-width:600px;}
+
+.cal-card{background:var(--card); border:1px solid var(--line); padding:24px; margin-bottom:36px;}
+.cal-head{display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+.cal-month{font-family:'Playfair Display', serif; font-weight:700; font-size:1.05rem;}
+.cal-grid{display:grid; grid-template-columns:repeat(7, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+.cal-dow{background:var(--stone); text-align:center; font-size:0.68rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:rgba(30,26,18,0.45); padding:8px 0;}
+.cal-cell{background:var(--card); min-height:56px; padding:6px 8px; position:relative;}
+.cal-cell.empty{background:var(--stone); opacity:0.4;}
+.cal-daynum{font-size:0.82rem; color:rgba(30,26,18,0.6);}
+.cal-cell.today .cal-daynum{background:var(--navy); color:var(--ivory); width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:700;}
+.cal-dot{position:absolute; bottom:8px; left:8px; width:6px; height:6px; border-radius:50%; background:var(--copper);}
+@media (max-width:600px){.cal-cell{min-height:38px; padding:4px;} .cal-daynum{font-size:0.72rem;}}
 .na-card{background:rgba(30,26,18,0.03); border:1px dashed var(--line); padding:40px 20px; text-align:center; color:rgba(30,26,18,0.5); font-size:0.9rem;}
 
 @media (max-width: 900px){
@@ -126,7 +154,7 @@ a{color:inherit; text-decoration:none;}
       <div class="nav-item " data-panel="panel-choisir-mission"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3v18M5 4h13l-3 4 3 4H5"/></svg><span data-i18n="nav-choisir-mission">Choisir une mission</span></div>
       <div class="nav-group-label" data-i18n="grp-suivi">Suivi de projet</div>
       <div class="nav-item " data-panel="panel-suivi-creation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span data-i18n="nav-suivi-creation">Suivi création d'entreprise</span></div>
-      <div class="nav-item " data-panel="panel-bail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span data-i18n="nav-bail">Bail commercial</span></div>
+      <div class="nav-item " data-panel="panel-bail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg><span data-i18n="nav-bail">Bail commercial</span></div>
       <div class="nav-group-label" data-i18n="grp-agenda">Agenda</div>
       <div class="nav-item " data-panel="panel-rdv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-i18n="nav-rdv">Mes rendez-vous</span></div>
       <div class="nav-group-label" data-i18n="grp-compta">Comptabilité</div>
@@ -267,12 +295,71 @@ a{color:inherit; text-decoration:none;}
         </div>
         <div class="form-field"><label data-i18n="lbl-secteur-projet">Secteur du projet</label><input type="text" data-i18n-ph="ph-secteur" placeholder="Ex. Tourisme, Import/Export..."></div>
       </div>
+      <div class="form-field" style="margin-bottom:24px;">
+        <label data-i18n="lbl-description-mission">Décrivez votre projet</label>
+        <textarea rows="5" data-i18n-ph="ph-description-mission" placeholder="Expliquez-nous ce que vous souhaitez réaliser, votre calendrier, vos contraintes particulières..." style="width:100%; border:1px solid var(--line); background:var(--card); padding:11px 12px; font-family:'Work Sans', sans-serif; font-size:0.88rem; color:var(--ink); resize:vertical;"></textarea>
+      </div>
       <div class="form-actions"><span></span><button type="button" class="btn-pill gold" data-i18n="btn-confirmer-mission">Confirmer la mission</button></div>
 </div>
     <div class="panel" id="panel-suivi-creation">
       <h2 class="section-title" data-i18n="suivi-title">Suivi création d'entreprise</h2>
       <p class="section-sub" data-i18n="suivi-sub">De la rédaction des statuts jusqu'au dépôt au greffe.</p>
-      <div class="na-card" data-i18n="suivi-na">Non applicable à votre mission actuelle. Choisissez "Création de société au Maroc" dans Démarrage pour activer ce suivi.</div>
+      <div class="track-list">
+        <div class="track-step done" data-step="s1">
+          <button type="button" class="track-trigger">
+            <span class="track-num">01</span>
+            <span class="track-title" data-i18n="track-s1-title">Rédaction des statuts</span>
+            <span class="track-status" data-i18n="track-s1-status">Terminé</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-s1-detail">Le projet de statuts de votre société a été rédigé par notre équipe juridique et vous a été transmis pour validation.</p></div>
+        </div>
+        <div class="track-step done" data-step="s2">
+          <button type="button" class="track-trigger">
+            <span class="track-num">02</span>
+            <span class="track-title" data-i18n="track-s2-title">Signature des statuts</span>
+            <span class="track-status" data-i18n="track-s2-status">Terminé</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-s2-detail">Les statuts ont été signés par les associés, en présentiel ou à distance selon votre disponibilité.</p></div>
+        </div>
+        <div class="track-step current open" data-step="s3">
+          <button type="button" class="track-trigger">
+            <span class="track-num">03</span>
+            <span class="track-title" data-i18n="track-s3-title">Ouverture du compte bancaire bloqué</span>
+            <span class="track-status" data-i18n="track-s3-status">En cours</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-s3-detail">Le capital social est en cours de dépôt sur un compte bloqué, étape obligatoire avant l'immatriculation.</p></div>
+        </div>
+        <div class="track-step pending" data-step="s4">
+          <button type="button" class="track-trigger">
+            <span class="track-num">04</span>
+            <span class="track-title" data-i18n="track-s4-title">Publication de l'annonce légale</span>
+            <span class="track-status" data-i18n="track-s4-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-s4-detail">Une annonce sera publiée dans un journal d'annonces légales pour officialiser la création.</p></div>
+        </div>
+        <div class="track-step pending" data-step="s5">
+          <button type="button" class="track-trigger">
+            <span class="track-num">05</span>
+            <span class="track-title" data-i18n="track-s5-title">Dépôt au greffe / registre de commerce</span>
+            <span class="track-status" data-i18n="track-s5-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-s5-detail">Le dossier complet sera déposé auprès du tribunal de commerce compétent.</p></div>
+        </div>
+        <div class="track-step pending" data-step="s6">
+          <button type="button" class="track-trigger">
+            <span class="track-num">06</span>
+            <span class="track-title" data-i18n="track-s6-title">Immatriculation & remise du dossier final</span>
+            <span class="track-status" data-i18n="track-s6-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-s6-detail">Réception du registre de commerce, de l'identifiant fiscal et remise de l'ensemble de vos documents officiels.</p></div>
+        </div>
+      </div>
 </div>
     <div class="panel" id="panel-bail">
       <h2 class="section-title" data-i18n="bail-title">Bail commercial</h2>
@@ -282,7 +369,31 @@ a{color:inherit; text-decoration:none;}
     <div class="panel" id="panel-rdv">
       <h2 class="section-title" data-i18n="rdv-title">Mes rendez-vous</h2>
       <p class="section-sub" data-i18n="rdv-sub">Réunions, rencontres clients, fournisseurs et partenaires au Maroc.</p>
-      <div class="stub-card" data-i18n="rdv-stub">Aucun rendez-vous programmé pour le moment.</div>
+
+      <div class="cal-card">
+        <div class="cal-head">
+          <span class="cal-month" data-i18n="cal-month">Septembre 2026</span>
+        </div>
+        <div class="cal-grid">
+          <div class="cal-dow">Lun</div><div class="cal-dow">Mar</div><div class="cal-dow">Mer</div><div class="cal-dow">Jeu</div><div class="cal-dow">Ven</div><div class="cal-dow">Sam</div><div class="cal-dow">Dim</div><div class="cal-cell empty"></div><div class="cal-cell"><span class="cal-daynum">1</span></div><div class="cal-cell"><span class="cal-daynum">2</span></div><div class="cal-cell"><span class="cal-daynum">3</span></div><div class="cal-cell"><span class="cal-daynum">4</span></div><div class="cal-cell"><span class="cal-daynum">5</span></div><div class="cal-cell"><span class="cal-daynum">6</span></div><div class="cal-cell"><span class="cal-daynum">7</span></div><div class="cal-cell"><span class="cal-daynum">8</span></div><div class="cal-cell"><span class="cal-daynum">9</span></div><div class="cal-cell"><span class="cal-daynum">10</span></div><div class="cal-cell"><span class="cal-daynum">11</span></div><div class="cal-cell today"><span class="cal-daynum">12</span></div><div class="cal-cell"><span class="cal-daynum">13</span></div><div class="cal-cell"><span class="cal-daynum">14</span></div><div class="cal-cell"><span class="cal-daynum">15</span><span class="cal-dot"></span></div><div class="cal-cell"><span class="cal-daynum">16</span></div><div class="cal-cell"><span class="cal-daynum">17</span></div><div class="cal-cell"><span class="cal-daynum">18</span></div><div class="cal-cell"><span class="cal-daynum">19</span></div><div class="cal-cell"><span class="cal-daynum">20</span></div><div class="cal-cell"><span class="cal-daynum">21</span></div><div class="cal-cell"><span class="cal-daynum">22</span><span class="cal-dot"></span></div><div class="cal-cell"><span class="cal-daynum">23</span></div><div class="cal-cell"><span class="cal-daynum">24</span></div><div class="cal-cell"><span class="cal-daynum">25</span></div><div class="cal-cell"><span class="cal-daynum">26</span></div><div class="cal-cell"><span class="cal-daynum">27</span></div><div class="cal-cell"><span class="cal-daynum">28</span></div><div class="cal-cell"><span class="cal-daynum">29</span><span class="cal-dot"></span></div><div class="cal-cell"><span class="cal-daynum">30</span></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <h2 class="list-title" data-i18n="cal-upcoming-title">Prochains rendez-vous</h2>
+      <div class="doc-list">
+          <div class="doc-row">
+            <div><div class="doc-name">Réunion partenaire bancaire</div><div class="doc-hint">Septembre 15, 2026 &middot; 10:00</div></div>
+            <span class="pill-ok">&#10003; Confirmé</span>
+          </div>
+          <div class="doc-row">
+            <div><div class="doc-name">Visite terrain — bureau Casablanca</div><div class="doc-hint">Septembre 22, 2026 &middot; 10:00</div></div>
+            <span class="pill-ok">&#10003; Confirmé</span>
+          </div>
+          <div class="doc-row">
+            <div><div class="doc-name">Rendez-vous notaire</div><div class="doc-hint">Septembre 29, 2026 &middot; 10:00</div></div>
+            <span class="pill-ok">&#10003; Confirmé</span>
+          </div>
+      </div>
 </div>
     <div class="panel" id="panel-docs-compta">
       <h2 class="section-title" data-i18n="compta-title">Mes documents comptables</h2>
@@ -292,7 +403,29 @@ a{color:inherit; text-decoration:none;}
     <div class="panel" id="panel-conciergerie">
       <h2 class="section-title" data-i18n="conc-title">Réserver un service</h2>
       <p class="section-sub" data-i18n="conc-sub">Vols, hébergement, voiture, interprète et plus encore.</p>
-      <div class="stub-card" data-i18n="conc-stub">Le formulaire de réservation arrive bientôt ici.</div>
+
+      <div class="form-grid">
+        <div class="form-field"><label data-i18n="lbl-conc-service">Service souhaité</label>
+          <select>
+            <option data-i18n="conc-opt1">Vols</option>
+            <option data-i18n="conc-opt2">Hébergement</option>
+            <option data-i18n="conc-opt3">Location de voiture</option>
+            <option data-i18n="conc-opt4">Espace coworking</option>
+            <option data-i18n="conc-opt5">Interprète</option>
+            <option data-i18n="conc-opt6">Autre demande</option>
+          </select>
+        </div>
+        <div class="form-field"><label data-i18n="lbl-conc-date">Date souhaitée</label><input type="date"></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field"><label data-i18n="lbl-conc-personnes">Nombre de personnes</label><input type="number" min="1" value="1"></div>
+        <div class="form-field"><label data-i18n="lbl-conc-ville">Ville</label><input type="text" data-i18n-ph="ph-conc-ville" placeholder="Ex. Casablanca, Rabat, Tanger..."></div>
+      </div>
+      <div class="form-field" style="margin-bottom:24px;">
+        <label data-i18n="lbl-conc-details">Détails de la demande</label>
+        <textarea rows="4" data-i18n-ph="ph-conc-details" placeholder="Précisez vos besoins : horaires, préférences, contraintes particulières..." style="width:100%; border:1px solid var(--line); background:var(--card); padding:11px 12px; font-family:'Work Sans', sans-serif; font-size:0.88rem; color:var(--ink); resize:vertical;"></textarea>
+      </div>
+      <div class="form-actions"><span></span><button type="button" class="btn-pill gold" data-i18n="btn-conc-reserver">Envoyer la demande</button></div>
 </div>
     </div>
   </div>
@@ -322,12 +455,18 @@ a{color:inherit; text-decoration:none;}
       document.getElementById(btn.getAttribute('data-sub')).classList.add('active');
     });
   });
+
+  document.querySelectorAll('.track-trigger').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btn.closest('.track-step').classList.toggle('open');
+    });
+  });
 </script>
 
 
 <script>
 (function(){
-  var ES = {"brand-sub": "Área Cliente", "nav-mes-infos": "Mi información", "grp-demarrage": "Inicio", "nav-choisir-mission": "Elegir una misión", "grp-suivi": "Seguimiento del proyecto", "nav-suivi-creation": "Seguimiento de constitución", "nav-bail": "Contrato de alquiler", "grp-agenda": "Agenda", "nav-rdv": "Mis citas", "grp-compta": "Contabilidad", "nav-docs-compta": "Mis documentos contables", "grp-conciergerie": "Conserjería", "nav-reserver": "Reservar un servicio", "sidebar-who-name": "Su empresa", "sidebar-who-role": "Cliente", "sidebar-logout": "Salir", "topbar-sub": "Estrecho Capital — Área Cliente", "subtab-compte": "Mi cuenta", "subtab-docs": "Mis documentos", "subtab-marketing": "Marketing", "mc-hint": "La foto de perfil no es visible en los documentos.", "mc-status": "Activo", "lbl-forme": "Forma jurídica", "lbl-denom": "Denominación comercial", "lbl-societe": "Sociedad", "lbl-nif": "NIF / CIF", "lbl-dossier": "N.º de expediente Estrecho", "lbl-prenom": "Nombre del representante", "lbl-nom": "Apellidos del representante", "lbl-adresse": "Dirección", "lbl-compl": "Dirección (línea 2)", "lbl-cp": "Código postal", "lbl-ville": "Ciudad", "lbl-tel": "Teléfono", "lbl-mobile": "Teléfono móvil", "btn-rib": "Gestión de cuentas bancarias", "h3-idmdp": "Usuario y contraseña", "p-idmdp": "Cambie su correo electrónico o su contraseña de acceso.", "lbl-email-connexion": "Correo electrónico de acceso", "btn-change-email": "Solicitar cambio de correo", "btn-change-mdp": "Cambiar contraseña", "info-box-email": "No hay ningún correo secundario configurado. Puede añadir hasta 2.", "btn-add-email": "Añadir un correo", "docs-title": "Mis documentos", "docs-sub": "Documentos necesarios para abrir y dar seguimiento a su expediente.", "doc1-n": "Nota Simple del Registro Mercantil", "doc1-h": "Extracto del Registro Mercantil español", "doc2-n": "Escritura de constitución", "doc2-h": "Escritura de constitución de la sociedad", "doc3-n": "RIB / IBAN", "doc3-h": "Datos bancarios de la sociedad", "doc4-n": "DNI del representante — anverso", "doc4-h": "DNI, NIE o pasaporte", "doc5-n": "DNI del representante — reverso", "doc5-h": "DNI, NIE o pasaporte", "doc6-n": "Contrato de prestación de servicios", "doc6-h": "Firmado con Estrecho Capital", "doc-status-missing": "&#9679; Falta", "btn-deposer": "Subir", "mk-title": "Marketing", "mk-sub": "Los elementos de imagen utilizados en nuestras comunicaciones y materiales sobre usted.", "lbl-logo": "Logotipo de la empresa", "btn-logo": "Subir un logotipo", "lbl-site": "Dirección del sitio web", "lbl-linkedin": "LinkedIn", "lbl-autre-reseau": "Otra red social", "mission-title": "Elegir una misión", "mission-sub": "Seleccione lo que desea encargar a Estrecho Capital para iniciar su estudio.", "lbl-type-mission": "Tipo de misión", "opt1": "Solo estudio y definición", "opt2": "Constitución de sociedad en Marruecos", "opt3": "Búsqueda de oficina / contrato de alquiler", "opt4": "Solo conserjería", "opt5": "Acompañamiento integral", "lbl-secteur-projet": "Sector del proyecto", "btn-confirmer-mission": "Confirmar la misión", "suivi-title": "Seguimiento de constitución", "suivi-sub": "Desde la redacción de los estatutos hasta la inscripción registral.", "suivi-na": "No aplicable a su misión actual. Elija \"Constitución de sociedad en Marruecos\" en Inicio para activar este seguimiento.", "bail-title": "Contrato de alquiler", "bail-sub": "Trazabilidad de su contrato de alquiler de oficina.", "bail-na": "No aplicable a su misión actual. Elija \"Búsqueda de oficina\" en Inicio para activar este seguimiento.", "rdv-title": "Mis citas", "rdv-sub": "Reuniones y encuentros con clientes, proveedores y socios en Marruecos.", "rdv-stub": "Por el momento no hay ninguna cita programada.", "compta-title": "Mis documentos contables", "compta-sub": "Depósito recurrente, una vez iniciada su misión.", "compta-na": "Esta sección se activará una vez confirmada su misión.", "conc-title": "Reservar un servicio", "conc-sub": "Vuelos, alojamiento, coche, intérprete y mucho más.", "conc-stub": "El formulario de reserva estará disponible aquí próximamente.", "_title": "Mi Espacio Cliente — Estrecho Capital", "mc-heading": "Mi cuenta", "ph-prenom": "Nombre", "ph-autreresau": "https://", "ph-adresse": "Dirección en España", "ph-ville": "Ciudad", "ph-nif": "Número de identificación fiscal", "ph-dossier": "Se asigna tras su primer estudio", "ph-raisonsociale": "Razón social", "ph-nom": "Apellidos", "ph-cp": "Código postal", "ph-nomcommercial": "Nombre comercial (si es distinto)", "ph-logo": "Ningún archivo subido", "ph-secteur": "Ej. Turismo, Import/Export...", "ph-linkedin": "https://linkedin.com/company/...", "ph-tel": "Teléfono", "ph-compladresse": "Dirección (línea 2)", "ph-mobile": "Teléfono móvil", "ph-siteweb": "https://", "val-email-connexion": "contacto@susociedad.es", "btn-enregistrer": "Guardar"};
+  var ES = {"brand-sub": "Área Cliente", "nav-mes-infos": "Mi información", "grp-demarrage": "Inicio", "nav-choisir-mission": "Elegir una misión", "grp-suivi": "Seguimiento del proyecto", "nav-suivi-creation": "Seguimiento de constitución", "nav-bail": "Contrato de alquiler", "grp-agenda": "Agenda", "nav-rdv": "Mis citas", "grp-compta": "Contabilidad", "nav-docs-compta": "Mis documentos contables", "grp-conciergerie": "Conserjería", "nav-reserver": "Reservar un servicio", "sidebar-who-name": "Su empresa", "sidebar-who-role": "Cliente", "sidebar-logout": "Salir", "topbar-sub": "Estrecho Capital — Área Cliente", "subtab-compte": "Mi cuenta", "subtab-docs": "Mis documentos", "subtab-marketing": "Marketing", "mc-hint": "La foto de perfil no es visible en los documentos.", "mc-status": "Activo", "lbl-forme": "Forma jurídica", "lbl-denom": "Denominación comercial", "lbl-societe": "Sociedad", "lbl-nif": "NIF / CIF", "lbl-dossier": "N.º de expediente Estrecho", "lbl-prenom": "Nombre del representante", "lbl-nom": "Apellidos del representante", "lbl-adresse": "Dirección", "lbl-compl": "Dirección (línea 2)", "lbl-cp": "Código postal", "lbl-ville": "Ciudad", "lbl-tel": "Teléfono", "lbl-mobile": "Teléfono móvil", "btn-rib": "Gestión de cuentas bancarias", "h3-idmdp": "Usuario y contraseña", "p-idmdp": "Cambie su correo electrónico o su contraseña de acceso.", "lbl-email-connexion": "Correo electrónico de acceso", "btn-change-email": "Solicitar cambio de correo", "btn-change-mdp": "Cambiar contraseña", "info-box-email": "No hay ningún correo secundario configurado. Puede añadir hasta 2.", "btn-add-email": "Añadir un correo", "docs-title": "Mis documentos", "docs-sub": "Documentos necesarios para abrir y dar seguimiento a su expediente.", "doc1-n": "Nota Simple del Registro Mercantil", "doc1-h": "Extracto del Registro Mercantil español", "doc2-n": "Escritura de constitución", "doc2-h": "Escritura de constitución de la sociedad", "doc3-n": "RIB / IBAN", "doc3-h": "Datos bancarios de la sociedad", "doc4-n": "DNI del representante — anverso", "doc4-h": "DNI, NIE o pasaporte", "doc5-n": "DNI del representante — reverso", "doc5-h": "DNI, NIE o pasaporte", "doc6-n": "Contrato de prestación de servicios", "doc6-h": "Firmado con Estrecho Capital", "doc-status-missing": "&#9679; Falta", "btn-deposer": "Subir", "mk-title": "Marketing", "mk-sub": "Los elementos de imagen utilizados en nuestras comunicaciones y materiales sobre usted.", "lbl-logo": "Logotipo de la empresa", "btn-logo": "Subir un logotipo", "lbl-site": "Dirección del sitio web", "lbl-linkedin": "LinkedIn", "lbl-autre-reseau": "Otra red social", "mission-title": "Elegir una misión", "mission-sub": "Seleccione lo que desea encargar a Estrecho Capital para iniciar su estudio.", "lbl-type-mission": "Tipo de misión", "opt1": "Solo estudio y definición", "opt2": "Constitución de sociedad en Marruecos", "opt3": "Búsqueda de oficina / contrato de alquiler", "opt4": "Solo conserjería", "opt5": "Acompañamiento integral", "lbl-secteur-projet": "Sector del proyecto", "btn-confirmer-mission": "Confirmar la misión", "suivi-title": "Seguimiento de constitución", "suivi-sub": "Desde la redacción de los estatutos hasta la inscripción registral.", "suivi-na": "No aplicable a su misión actual. Elija \"Constitución de sociedad en Marruecos\" en Inicio para activar este seguimiento.", "bail-title": "Contrato de alquiler", "bail-sub": "Trazabilidad de su contrato de alquiler de oficina.", "bail-na": "No aplicable a su misión actual. Elija \"Búsqueda de oficina\" en Inicio para activar este seguimiento.", "rdv-title": "Mis citas", "rdv-sub": "Reuniones y encuentros con clientes, proveedores y socios en Marruecos.", "rdv-stub": "Por el momento no hay ninguna cita programada.", "compta-title": "Mis documentos contables", "compta-sub": "Depósito recurrente, una vez iniciada su misión.", "compta-na": "Esta sección se activará una vez confirmada su misión.", "conc-title": "Reservar un servicio", "conc-sub": "Vuelos, alojamiento, coche, intérprete y mucho más.", "conc-stub": "El formulario de reserva estará disponible aquí próximamente.", "_title": "Mi Espacio Cliente — Estrecho Capital", "mc-heading": "Mi cuenta", "ph-prenom": "Nombre", "ph-autreresau": "https://", "ph-adresse": "Dirección en España", "ph-ville": "Ciudad", "ph-nif": "Número de identificación fiscal", "ph-dossier": "Se asigna tras su primer estudio", "ph-raisonsociale": "Razón social", "ph-nom": "Apellidos", "ph-cp": "Código postal", "ph-nomcommercial": "Nombre comercial (si es distinto)", "ph-logo": "Ningún archivo subido", "ph-secteur": "Ej. Turismo, Import/Export...", "ph-linkedin": "https://linkedin.com/company/...", "ph-tel": "Teléfono", "ph-compladresse": "Dirección (línea 2)", "ph-mobile": "Teléfono móvil", "ph-siteweb": "https://", "val-email-connexion": "contacto@susociedad.es", "btn-enregistrer": "Guardar", "lbl-description-mission": "Describa su proyecto", "ph-description-mission": "Explíquenos lo que desea realizar, su calendario, sus limitaciones particulares...", "cal-month": "Septiembre 2026", "cal-upcoming-title": "Próximas citas", "track-s1-title": "Redacción de los estatutos", "track-s1-status": "Completado", "track-s1-detail": "El proyecto de estatutos de su sociedad ha sido redactado por nuestro equipo jurídico y enviado para su validación.", "track-s2-title": "Firma de los estatutos", "track-s2-status": "Completado", "track-s2-detail": "Los estatutos han sido firmados por los socios, presencialmente o a distancia según su disponibilidad.", "track-s3-title": "Apertura de la cuenta bancaria bloqueada", "track-s3-status": "En curso", "track-s3-detail": "El capital social se está depositando en una cuenta bloqueada, paso obligatorio antes de la inscripción.", "track-s4-title": "Publicación del anuncio legal", "track-s4-status": "Próximamente", "track-s4-detail": "Se publicará un anuncio en un periódico de anuncios legales para oficializar la constitución.", "track-s5-title": "Depósito en el registro mercantil", "track-s5-status": "Próximamente", "track-s5-detail": "El expediente completo se presentará ante el tribunal de comercio competente.", "track-s6-title": "Inscripción y entrega del expediente final", "track-s6-status": "Próximamente", "track-s6-detail": "Recepción del registro de comercio, el identificador fiscal y entrega de todos sus documentos oficiales.", "lbl-conc-service": "Servicio deseado", "conc-opt1": "Vuelos", "conc-opt2": "Alojamiento", "conc-opt3": "Alquiler de coche", "conc-opt4": "Espacio de coworking", "conc-opt5": "Intérprete", "conc-opt6": "Otra solicitud", "lbl-conc-date": "Fecha deseada", "lbl-conc-personnes": "Número de personas", "lbl-conc-ville": "Ciudad", "ph-conc-ville": "Ej. Casablanca, Rabat, Tánger...", "lbl-conc-details": "Detalles de la solicitud", "ph-conc-details": "Especifique sus necesidades: horarios, preferencias, limitaciones particulares...", "btn-conc-reserver": "Enviar la solicitud"};
   var frTitle = document.title;
   var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
   var frCache = new Map();
