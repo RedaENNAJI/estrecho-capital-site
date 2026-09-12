@@ -168,18 +168,18 @@ a{color:inherit; text-decoration:none;}
 
         <div class="form-grid">
           <div class="form-field"><label data-i18n="lbl-forme">Forme juridique</label><input type="text" value="S.L. — Sociedad Limitada"></div>
-          <div class="form-field"><label data-i18n="lbl-denom">Dénomination commerciale</label><input type="text" placeholder="Nom commercial (si différent)"></div>
-          <div class="form-field"><label data-i18n="lbl-societe">Société</label><input type="text" placeholder="Raison sociale"></div>
-          <div class="form-field"><label data-i18n="lbl-nif">NIF / CIF</label><input type="text" placeholder="Numéro d'identification fiscale"></div>
-          <div class="form-field"><label data-i18n="lbl-dossier">N° de dossier Estrecho</label><input type="text" placeholder="Attribué après votre première étude" disabled></div>
-          <div class="form-field"><label data-i18n="lbl-prenom">Prénom du dirigeant</label><input type="text" placeholder="Prénom"></div>
-          <div class="form-field"><label data-i18n="lbl-nom">Nom du dirigeant</label><input type="text" placeholder="Nom"></div>
-          <div class="form-field"><label data-i18n="lbl-adresse">Adresse</label><input type="text" placeholder="Adresse en Espagne"></div>
-          <div class="form-field"><label data-i18n="lbl-compl">Complément d'adresse</label><input type="text" placeholder="Complément d'adresse"></div>
-          <div class="form-field"><label data-i18n="lbl-cp">Code postal</label><input type="text" placeholder="Code postal"></div>
-          <div class="form-field"><label data-i18n="lbl-ville">Ville</label><input type="text" placeholder="Ville"></div>
-          <div class="form-field"><label data-i18n="lbl-tel">Téléphone</label><input type="text" placeholder="Téléphone"></div>
-          <div class="form-field"><label data-i18n="lbl-mobile">Téléphone mobile</label><input type="text" placeholder="Téléphone mobile"></div>
+          <div class="form-field"><label data-i18n="lbl-denom">Dénomination commerciale</label><input type="text" data-i18n-ph="ph-nomcommercial" placeholder="Nom commercial (si différent)"></div>
+          <div class="form-field"><label data-i18n="lbl-societe">Société</label><input type="text" data-i18n-ph="ph-raisonsociale" placeholder="Raison sociale"></div>
+          <div class="form-field"><label data-i18n="lbl-nif">NIF / CIF</label><input type="text" data-i18n-ph="ph-nif" placeholder="Numéro d'identification fiscale"></div>
+          <div class="form-field"><label data-i18n="lbl-dossier">N° de dossier Estrecho</label><input type="text" data-i18n-ph="ph-dossier" placeholder="Attribué après votre première étude" disabled></div>
+          <div class="form-field"><label data-i18n="lbl-prenom">Prénom du dirigeant</label><input type="text" data-i18n-ph="ph-prenom" placeholder="Prénom"></div>
+          <div class="form-field"><label data-i18n="lbl-nom">Nom du dirigeant</label><input type="text" data-i18n-ph="ph-nom" placeholder="Nom"></div>
+          <div class="form-field"><label data-i18n="lbl-adresse">Adresse</label><input type="text" data-i18n-ph="ph-adresse" placeholder="Adresse en Espagne"></div>
+          <div class="form-field"><label data-i18n="lbl-compl">Complément d'adresse</label><input type="text" data-i18n-ph="ph-compladresse" placeholder="Complément d'adresse"></div>
+          <div class="form-field"><label data-i18n="lbl-cp">Code postal</label><input type="text" data-i18n-ph="ph-cp" placeholder="Code postal"></div>
+          <div class="form-field"><label data-i18n="lbl-ville">Ville</label><input type="text" data-i18n-ph="ph-ville" placeholder="Ville"></div>
+          <div class="form-field"><label data-i18n="lbl-tel">Téléphone</label><input type="text" data-i18n-ph="ph-tel" placeholder="Téléphone"></div>
+          <div class="form-field"><label data-i18n="lbl-mobile">Téléphone mobile</label><input type="text" data-i18n-ph="ph-mobile" placeholder="Téléphone mobile"></div>
         </div>
         <div class="form-actions">
           <button type="button" class="btn-pill outline" data-i18n="btn-rib">Gestion des RIB</button>
@@ -240,10 +240,10 @@ a{color:inherit; text-decoration:none;}
         <h2 class="section-title" data-i18n="mk-title">Marketing</h2>
         <p class="section-sub" data-i18n="mk-sub">Les éléments d'image utilisés dans nos échanges et supports vous concernant.</p>
         <div class="form-grid">
-          <div class="form-field"><label data-i18n="lbl-logo">Logo de l'entreprise</label><input type="text" placeholder="Aucun fichier déposé" disabled></div>
+          <div class="form-field"><label data-i18n="lbl-logo">Logo de l'entreprise</label><input type="text" data-i18n-ph="ph-logo" placeholder="Aucun fichier déposé" disabled></div>
           <div class="form-field"><label>&nbsp;</label><button type="button" class="btn-pill outline" data-i18n="btn-logo">Déposer un logo</button></div>
-          <div class="form-field"><label data-i18n="lbl-site">Adresse du site web</label><input type="text" placeholder="https://"></div>
-          <div class="form-field"><label data-i18n="lbl-linkedin">LinkedIn</label><input type="text" placeholder="https://linkedin.com/company/..."></div>
+          <div class="form-field"><label data-i18n="lbl-site">Adresse du site web</label><input type="text" data-i18n-ph="ph-siteweb" data-i18n-ph="ph-autreresau" placeholder="https://"></div>
+          <div class="form-field"><label data-i18n="lbl-linkedin">LinkedIn</label><input type="text" data-i18n-ph="ph-linkedin" placeholder="https://linkedin.com/company/..."></div>
           <div class="form-field"><label data-i18n="lbl-autre-reseau">Autre réseau social</label><input type="text" placeholder="https://"></div>
         </div>
         <div class="form-actions">
@@ -265,7 +265,7 @@ a{color:inherit; text-decoration:none;}
             <option data-i18n="opt5">Accompagnement complet</option>
           </select>
         </div>
-        <div class="form-field"><label data-i18n="lbl-secteur-projet">Secteur du projet</label><input type="text" placeholder="Ex. Tourisme, Import/Export..."></div>
+        <div class="form-field"><label data-i18n="lbl-secteur-projet">Secteur du projet</label><input type="text" data-i18n-ph="ph-secteur" placeholder="Ex. Tourisme, Import/Export..."></div>
       </div>
       <div class="form-actions"><span></span><button type="button" class="btn-pill gold" data-i18n="btn-confirmer-mission">Confirmer la mission</button></div>
 </div>
@@ -327,11 +327,14 @@ a{color:inherit; text-decoration:none;}
 
 <script>
 (function(){
-  var ES = {"brand-sub": "Área Cliente", "nav-mes-infos": "Mi información", "grp-demarrage": "Inicio", "nav-choisir-mission": "Elegir una misión", "grp-suivi": "Seguimiento del proyecto", "nav-suivi-creation": "Seguimiento de constitución", "nav-bail": "Contrato de alquiler", "grp-agenda": "Agenda", "nav-rdv": "Mis citas", "grp-compta": "Contabilidad", "nav-docs-compta": "Mis documentos contables", "grp-conciergerie": "Conserjería", "nav-reserver": "Reservar un servicio", "sidebar-who-name": "Su empresa", "sidebar-who-role": "Cliente", "sidebar-logout": "Salir", "topbar-sub": "Estrecho Capital — Área Cliente", "subtab-compte": "Mi cuenta", "subtab-docs": "Mis documentos", "subtab-marketing": "Marketing", "mc-hint": "La foto de perfil no es visible en los documentos.", "mc-status": "Activo", "lbl-forme": "Forma jurídica", "lbl-denom": "Denominación comercial", "lbl-societe": "Sociedad", "lbl-nif": "NIF / CIF", "lbl-dossier": "N.º de expediente Estrecho", "lbl-prenom": "Nombre del representante", "lbl-nom": "Apellidos del representante", "lbl-adresse": "Dirección", "lbl-compl": "Dirección (línea 2)", "lbl-cp": "Código postal", "lbl-ville": "Ciudad", "lbl-tel": "Teléfono", "lbl-mobile": "Teléfono móvil", "btn-rib": "Gestión de cuentas bancarias", "btn-enregistrer1": "Guardar", "h3-idmdp": "Usuario y contraseña", "p-idmdp": "Cambie su correo electrónico o su contraseña de acceso.", "lbl-email-connexion": "Correo electrónico de acceso", "btn-change-email": "Solicitar cambio de correo", "btn-change-mdp": "Cambiar contraseña", "info-box-email": "No hay ningún correo secundario configurado. Puede añadir hasta 2.", "btn-add-email": "Añadir un correo", "docs-title": "Mis documentos", "docs-sub": "Documentos necesarios para abrir y dar seguimiento a su expediente.", "doc1-n": "Nota Simple del Registro Mercantil", "doc1-h": "Extracto del Registro Mercantil español", "doc2-n": "Escritura de constitución", "doc2-h": "Escritura de constitución de la sociedad", "doc3-n": "RIB / IBAN", "doc3-h": "Datos bancarios de la sociedad", "doc4-n": "DNI del representante — anverso", "doc4-h": "DNI, NIE o pasaporte", "doc5-n": "DNI del representante — reverso", "doc5-h": "DNI, NIE o pasaporte", "doc6-n": "Contrato de prestación de servicios", "doc6-h": "Firmado con Estrecho Capital", "doc-status-missing": "&#9679; Falta", "btn-deposer": "Subir", "mk-title": "Marketing", "mk-sub": "Los elementos de imagen utilizados en nuestras comunicaciones y materiales sobre usted.", "lbl-logo": "Logotipo de la empresa", "btn-logo": "Subir un logotipo", "lbl-site": "Dirección del sitio web", "lbl-linkedin": "LinkedIn", "lbl-autre-reseau": "Otra red social", "mission-title": "Elegir una misión", "mission-sub": "Seleccione lo que desea encargar a Estrecho Capital para iniciar su estudio.", "lbl-type-mission": "Tipo de misión", "opt1": "Solo estudio y definición", "opt2": "Constitución de sociedad en Marruecos", "opt3": "Búsqueda de oficina / contrato de alquiler", "opt4": "Solo conserjería", "opt5": "Acompañamiento integral", "lbl-secteur-projet": "Sector del proyecto", "btn-confirmer-mission": "Confirmar la misión", "suivi-title": "Seguimiento de constitución", "suivi-sub": "Desde la redacción de los estatutos hasta la inscripción registral.", "suivi-na": "No aplicable a su misión actual. Elija \"Constitución de sociedad en Marruecos\" en Inicio para activar este seguimiento.", "bail-title": "Contrato de alquiler", "bail-sub": "Trazabilidad de su contrato de alquiler de oficina.", "bail-na": "No aplicable a su misión actual. Elija \"Búsqueda de oficina\" en Inicio para activar este seguimiento.", "rdv-title": "Mis citas", "rdv-sub": "Reuniones y encuentros con clientes, proveedores y socios en Marruecos.", "rdv-stub": "Por el momento no hay ninguna cita programada.", "compta-title": "Mis documentos contables", "compta-sub": "Depósito recurrente, una vez iniciada su misión.", "compta-na": "Esta sección se activará una vez confirmada su misión.", "conc-title": "Reservar un servicio", "conc-sub": "Vuelos, alojamiento, coche, intérprete y mucho más.", "conc-stub": "El formulario de reserva estará disponible aquí próximamente.", "_title": "Mi Espacio Cliente — Estrecho Capital", "mc-heading": "Mi cuenta"};
+  var ES = {"brand-sub": "Área Cliente", "nav-mes-infos": "Mi información", "grp-demarrage": "Inicio", "nav-choisir-mission": "Elegir una misión", "grp-suivi": "Seguimiento del proyecto", "nav-suivi-creation": "Seguimiento de constitución", "nav-bail": "Contrato de alquiler", "grp-agenda": "Agenda", "nav-rdv": "Mis citas", "grp-compta": "Contabilidad", "nav-docs-compta": "Mis documentos contables", "grp-conciergerie": "Conserjería", "nav-reserver": "Reservar un servicio", "sidebar-who-name": "Su empresa", "sidebar-who-role": "Cliente", "sidebar-logout": "Salir", "topbar-sub": "Estrecho Capital — Área Cliente", "subtab-compte": "Mi cuenta", "subtab-docs": "Mis documentos", "subtab-marketing": "Marketing", "mc-hint": "La foto de perfil no es visible en los documentos.", "mc-status": "Activo", "lbl-forme": "Forma jurídica", "lbl-denom": "Denominación comercial", "lbl-societe": "Sociedad", "lbl-nif": "NIF / CIF", "lbl-dossier": "N.º de expediente Estrecho", "lbl-prenom": "Nombre del representante", "lbl-nom": "Apellidos del representante", "lbl-adresse": "Dirección", "lbl-compl": "Dirección (línea 2)", "lbl-cp": "Código postal", "lbl-ville": "Ciudad", "lbl-tel": "Teléfono", "lbl-mobile": "Teléfono móvil", "btn-rib": "Gestión de cuentas bancarias", "btn-enregistrer1": "Guardar", "h3-idmdp": "Usuario y contraseña", "p-idmdp": "Cambie su correo electrónico o su contraseña de acceso.", "lbl-email-connexion": "Correo electrónico de acceso", "btn-change-email": "Solicitar cambio de correo", "btn-change-mdp": "Cambiar contraseña", "info-box-email": "No hay ningún correo secundario configurado. Puede añadir hasta 2.", "btn-add-email": "Añadir un correo", "docs-title": "Mis documentos", "docs-sub": "Documentos necesarios para abrir y dar seguimiento a su expediente.", "doc1-n": "Nota Simple del Registro Mercantil", "doc1-h": "Extracto del Registro Mercantil español", "doc2-n": "Escritura de constitución", "doc2-h": "Escritura de constitución de la sociedad", "doc3-n": "RIB / IBAN", "doc3-h": "Datos bancarios de la sociedad", "doc4-n": "DNI del representante — anverso", "doc4-h": "DNI, NIE o pasaporte", "doc5-n": "DNI del representante — reverso", "doc5-h": "DNI, NIE o pasaporte", "doc6-n": "Contrato de prestación de servicios", "doc6-h": "Firmado con Estrecho Capital", "doc-status-missing": "&#9679; Falta", "btn-deposer": "Subir", "mk-title": "Marketing", "mk-sub": "Los elementos de imagen utilizados en nuestras comunicaciones y materiales sobre usted.", "lbl-logo": "Logotipo de la empresa", "btn-logo": "Subir un logotipo", "lbl-site": "Dirección del sitio web", "lbl-linkedin": "LinkedIn", "lbl-autre-reseau": "Otra red social", "mission-title": "Elegir una misión", "mission-sub": "Seleccione lo que desea encargar a Estrecho Capital para iniciar su estudio.", "lbl-type-mission": "Tipo de misión", "opt1": "Solo estudio y definición", "opt2": "Constitución de sociedad en Marruecos", "opt3": "Búsqueda de oficina / contrato de alquiler", "opt4": "Solo conserjería", "opt5": "Acompañamiento integral", "lbl-secteur-projet": "Sector del proyecto", "btn-confirmer-mission": "Confirmar la misión", "suivi-title": "Seguimiento de constitución", "suivi-sub": "Desde la redacción de los estatutos hasta la inscripción registral.", "suivi-na": "No aplicable a su misión actual. Elija \"Constitución de sociedad en Marruecos\" en Inicio para activar este seguimiento.", "bail-title": "Contrato de alquiler", "bail-sub": "Trazabilidad de su contrato de alquiler de oficina.", "bail-na": "No aplicable a su misión actual. Elija \"Búsqueda de oficina\" en Inicio para activar este seguimiento.", "rdv-title": "Mis citas", "rdv-sub": "Reuniones y encuentros con clientes, proveedores y socios en Marruecos.", "rdv-stub": "Por el momento no hay ninguna cita programada.", "compta-title": "Mis documentos contables", "compta-sub": "Depósito recurrente, una vez iniciada su misión.", "compta-na": "Esta sección se activará una vez confirmada su misión.", "conc-title": "Reservar un servicio", "conc-sub": "Vuelos, alojamiento, coche, intérprete y mucho más.", "conc-stub": "El formulario de reserva estará disponible aquí próximamente.", "_title": "Mi Espacio Cliente — Estrecho Capital", "mc-heading": "Mi cuenta", "ph-prenom": "Nombre", "ph-autreresau": "https://", "ph-adresse": "Dirección en España", "ph-ville": "Ciudad", "ph-nif": "Número de identificación fiscal", "ph-dossier": "Se asigna tras su primer estudio", "ph-raisonsociale": "Razón social", "ph-nom": "Apellidos", "ph-cp": "Código postal", "ph-nomcommercial": "Nombre comercial (si es distinto)", "ph-logo": "Ningún archivo subido", "ph-secteur": "Ej. Turismo, Import/Export...", "ph-linkedin": "https://linkedin.com/company/...", "ph-tel": "Teléfono", "ph-compladresse": "Dirección (línea 2)", "ph-mobile": "Teléfono móvil", "ph-siteweb": "https://"};
   var frTitle = document.title;
   var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
   var frCache = new Map();
   i18nEls.forEach(function(el){ frCache.set(el, el.innerHTML); });
+  var phEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-ph]'));
+  var frPhCache = new Map();
+  phEls.forEach(function(el){ frPhCache.set(el, el.getAttribute('placeholder')); });
 
   function setLang(lang){
     document.documentElement.lang = lang;
@@ -340,9 +343,14 @@ a{color:inherit; text-decoration:none;}
         var key = el.getAttribute('data-i18n');
         if(ES[key] !== undefined) el.innerHTML = ES[key];
       });
+      phEls.forEach(function(el){
+        var key = el.getAttribute('data-i18n-ph');
+        if(ES[key] !== undefined) el.setAttribute('placeholder', ES[key]);
+      });
       if(ES['_title']) document.title = ES['_title'];
     } else {
       i18nEls.forEach(function(el){ el.innerHTML = frCache.get(el); });
+      phEls.forEach(function(el){ el.setAttribute('placeholder', frPhCache.get(el)); });
       document.title = frTitle;
     }
   }
