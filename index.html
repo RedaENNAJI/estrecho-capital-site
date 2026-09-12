@@ -1151,8 +1151,14 @@
   }
 
   document.querySelectorAll('.lang-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){ setLang(btn.getAttribute('data-lang')); });
+    btn.addEventListener('click', function(){
+      setLang(btn.getAttribute('data-lang'));
+      localStorage.setItem('estrecho_lang', btn.getAttribute('data-lang'));
+    });
   });
+
+  var saved = localStorage.getItem('estrecho_lang');
+  if(saved === 'es'){ setLang('es'); }
 })();
 </script>
 </body>
