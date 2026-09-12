@@ -42,16 +42,15 @@ a{color:inherit; text-decoration:none;}
 .nav-icon-badge{
   width:28px; height:28px; border-radius:8px;
   display:flex; align-items:center; justify-content:center;
-  background:rgba(245,241,231,0.05);
+  color:#fff;
   flex-shrink:0;
-  transition:background .25s ease, transform .25s ease, box-shadow .25s ease;
+  transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
 }
-.nav-item svg{width:16px; height:16px; flex-shrink:0; opacity:0.8; transition:opacity .2s ease, color .2s ease;}
+.nav-item svg{width:15px; height:15px; flex-shrink:0; opacity:0.95; transition:opacity .2s ease;}
 .nav-item:hover{background:rgba(245,241,231,0.04); color:var(--ivory);}
-.nav-item:hover .nav-icon-badge{background:rgba(250,189,0,0.16); transform:scale(1.08) rotate(-4deg);}
+.nav-item:hover .nav-icon-badge{transform:scale(1.1) rotate(-4deg); filter:brightness(1.12);}
 .nav-item.active{background:rgba(250,189,0,0.1); border-left-color:var(--copper); color:var(--ivory); font-weight:600;}
-.nav-item.active svg{opacity:1; color:var(--navy-deep);}
-.nav-item.active .nav-icon-badge{background:var(--copper); box-shadow:0 0 0 4px rgba(250,189,0,0.16);}
+.nav-item.active .nav-icon-badge{box-shadow:0 0 0 3px rgba(250,189,0,0.35);}
 
 .sidebar-foot{display:flex; align-items:center; gap:10px; padding:16px 20px; border-top:1px solid rgba(245,241,231,0.08);}
 .sidebar-foot .avatar-sm{width:32px; height:32px; border-radius:50%; background:var(--copper); color:var(--navy-deep); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.82rem; flex-shrink:0;}
@@ -170,18 +169,18 @@ a{color:inherit; text-decoration:none;}
     </a>
     <nav class="sidebar-nav">
       <div class="nav-group-label">Mes informations</div>
-      <div class="nav-item active" data-panel="panel-mes-infos"><span class="nav-icon-badge"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="3.4" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c0-4 3.2-6.2 7-6.2s7 2.2 7 6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17.5" cy="6.5" r="2.2" fill="currentColor"/></svg></span><span data-i18n="nav-mes-infos">Mes informations</span></div>
+      <div class="nav-item active" data-panel="panel-mes-infos"><span class="nav-icon-badge" style="background:#3B82F6;"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.4" r="3.4"/><path d="M5 20c0-4 3.2-6.4 7-6.4s7 2.4 7 6.4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg></span><span data-i18n="nav-mes-infos">Mes informations</span></div>
       <div class="nav-group-label" data-i18n="grp-demarrage">Démarrage</div>
-      <div class="nav-item " data-panel="panel-choisir-mission"><span class="nav-icon-badge"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span><span data-i18n="nav-choisir-mission">Choisir une mission</span></div>
+      <div class="nav-item " data-panel="panel-choisir-mission"><span class="nav-icon-badge" style="background:#F97316;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3v18H4.5V3H6z"/><path d="M6 4h13l-2.6 4L19 12H6V4z"/></svg></span><span data-i18n="nav-choisir-mission">Choisir une mission</span></div>
       <div class="nav-group-label" data-i18n="grp-suivi">Suivi de projet</div>
-      <div class="nav-item " data-panel="panel-suivi-creation"><span class="nav-icon-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M10 20V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 20V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 13l6-4 6-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="5" r="2" fill="currentColor"/></svg></span><span data-i18n="nav-suivi-creation">Suivi création d'entreprise</span></div>
-      <div class="nav-item " data-panel="panel-bail"><span class="nav-icon-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V9.5L12 4l8 5.5V21" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><rect x="9.3" y="13.5" width="5.4" height="7.5" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.4"/><circle cx="13.4" cy="17" r="0.55" fill="currentColor"/></svg></span><span data-i18n="nav-bail">Bail commercial</span></div>
+      <div class="nav-item " data-panel="panel-suivi-creation"><span class="nav-icon-badge" style="background:#16A34A;"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="14" width="4" height="7" rx="0.8"/><rect x="10" y="9.5" width="4" height="11.5" rx="0.8"/><rect x="16.5" y="4.5" width="4" height="16.5" rx="0.8"/></svg></span><span data-i18n="nav-suivi-creation">Suivi création d'entreprise</span></div>
+      <div class="nav-item " data-panel="panel-bail"><span class="nav-icon-badge" style="background:#8B5CF6;"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7.5" cy="14.5" r="3.6"/><rect x="10.4" y="13.1" width="10.5" height="2.8" rx="1.2"/><rect x="17.5" y="9.8" width="2.8" height="3.6" rx="0.8"/></svg></span><span data-i18n="nav-bail">Bail commercial</span></div>
       <div class="nav-group-label" data-i18n="grp-agenda">Agenda</div>
-      <div class="nav-item " data-panel="panel-rdv"><span class="nav-icon-badge"><svg viewBox="0 0 24 24" fill="none"><rect x="3.2" y="5" width="17.6" height="15.5" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3.2 9.6h17.6" stroke="currentColor" stroke-width="1.6"/><rect x="6.4" y="12.4" width="4.4" height="4" rx="0.6" fill="currentColor" fill-opacity="0.7"/><path d="M8 3v3.4M16 3v3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span data-i18n="nav-rdv">Mes rendez-vous</span></div>
+      <div class="nav-item " data-panel="panel-rdv"><span class="nav-icon-badge" style="background:#EF4444;"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.2" y="3.6" width="17.6" height="4.2" rx="1.4"/><rect x="3.2" y="9.2" width="17.6" height="11.2" rx="1.6"/><rect x="7" y="2" width="1.8" height="3.4" rx="0.9" fill-opacity="0.6"/><rect x="15.2" y="2" width="1.8" height="3.4" rx="0.9" fill-opacity="0.6"/></svg></span><span data-i18n="nav-rdv">Mes rendez-vous</span></div>
       <div class="nav-group-label" data-i18n="grp-compta">Comptabilité</div>
-      <div class="nav-item " data-panel="panel-docs-compta"><span class="nav-icon-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M5.5 3.6h9l4 4V19a1.3 1.3 0 0 1-1.3 1.4H5.5A1.3 1.3 0 0 1 4.2 19V5A1.3 1.3 0 0 1 5.5 3.6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="14" r="3" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.4"/><path d="M12 12.4v3.2M10.8 13.2h2.4M10.8 14.8h2.4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span><span data-i18n="nav-docs-compta">Mes documents comptables</span></div>
+      <div class="nav-item " data-panel="panel-docs-compta"><span class="nav-icon-badge" style="background:#0D9488;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 3.2h8.4l4.6 4.6V20a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V4.2a1 1 0 0 1 1-1z"/></svg></span><span data-i18n="nav-docs-compta">Mes documents comptables</span></div>
       <div class="nav-group-label" data-i18n="grp-conciergerie">Conciergerie</div>
-      <div class="nav-item " data-panel="panel-conciergerie"><span class="nav-icon-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 18.5h17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M5.5 18.5v-3.8a6.5 6.5 0 0 1 13 0v3.8" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="6.3" r="1.6" fill="currentColor"/><circle cx="18.5" cy="17.2" r="1.5" fill="currentColor" fill-opacity="0.85"/></svg></span><span data-i18n="nav-reserver">Réserver un service</span></div>
+      <div class="nav-item " data-panel="panel-conciergerie"><span class="nav-icon-badge" style="background:#EC4899;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 18.4h16v1.6H4z"/><path d="M6 18v-3.4a6 6 0 0 1 12 0V18H6z"/><circle cx="12" cy="6" r="1.7"/></svg></span><span data-i18n="nav-reserver">Réserver un service</span></div>
     </nav>
     <div class="sidebar-foot">
       <div class="avatar-sm">S</div>
