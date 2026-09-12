@@ -85,6 +85,14 @@ a{color:inherit; text-decoration:none;}
 .profile-hint{font-size:0.8rem; color:rgba(30,26,18,0.45); margin-bottom:28px;}
 
 .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px 24px; margin-bottom:24px;}
+
+.mission-check-list{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
+.mission-check{display:flex; align-items:flex-start; gap:14px; background:var(--card); padding:16px 18px; cursor:pointer;}
+.mission-check input[type="checkbox"]{width:18px; height:18px; margin-top:2px; accent-color:var(--copper); flex-shrink:0; cursor:pointer;}
+.mission-check-body{display:flex; flex-direction:column; gap:3px;}
+.mission-check-title{font-size:0.92rem; font-weight:600; color:var(--ink);}
+.mission-check-hint{font-size:0.8rem; color:rgba(30,26,18,0.5);}
+.mission-check input:disabled ~ .mission-check-body{opacity:0.6;}
 .form-field label{display:block; font-size:0.72rem; color:rgba(30,26,18,0.5); margin-bottom:6px;}
 .form-field input, .form-field select{width:100%; border:1px solid var(--line); background:var(--card); padding:10px 12px; font-family:'Work Sans', sans-serif; font-size:0.88rem; color:var(--ink);}
 .form-field input:focus, .form-field select:focus{outline:none; border-color:var(--copper);}
@@ -133,6 +141,20 @@ a{color:inherit; text-decoration:none;}
 .track-detail p{padding:0 4px 20px 44px; font-size:0.86rem; color:rgba(30,26,18,0.6); max-width:600px;}
 
 .cal-card{background:var(--card); border:1px solid var(--line); padding:24px; margin-bottom:36px; transition:box-shadow .2s ease;}
+
+.timeline-legend{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:36px;}
+.tl-item{display:flex; align-items:center; gap:6px; font-size:0.8rem; color:rgba(30,26,18,0.6);}
+.tl-dot{width:8px; height:8px; border-radius:50%; flex-shrink:0;}
+.timeline-wrap{position:relative; height:120px; margin:0 10px;}
+.timeline-line{position:absolute; top:50px; left:0; right:0; height:2px; background:var(--line);}
+.tl-point{position:absolute; top:0; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center;}
+.tl-dot-lg{width:14px; height:14px; border-radius:50%; border:3px solid var(--card); margin-top:44px; opacity:0.35; transition:opacity .3s ease;}
+.tl-point.current .tl-dot-lg{opacity:1; box-shadow:0 0 0 3px rgba(250,189,0,0.28);}
+.tl-point:not(.current) .tl-dot-lg{opacity:0.85;}
+.tl-label{position:absolute; bottom:70px; font-size:0.74rem; color:var(--ink); width:100px; text-align:center;}
+.tl-label.bottom{bottom:auto; top:70px;}
+.tl-point.dim .tl-dot-lg{opacity:0.15;}
+.tl-point.dim .tl-label{opacity:0.3;}
 .cal-card:hover{box-shadow:0 8px 20px rgba(11,20,32,0.08);}
 .cal-head{display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
 .cal-month{font-family:'Playfair Display', serif; font-weight:700; font-size:1.05rem;}
@@ -172,8 +194,10 @@ a{color:inherit; text-decoration:none;}
       <div class="nav-group-label" data-i18n="grp-demarrage">Démarrage</div>
       <div class="nav-item " data-panel="panel-choisir-mission"><span class="nav-icon-badge" style="color:#F97316;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3v18H4.5V3H6z"/><path d="M6 4h13l-2.6 4L19 12H6V4z"/></svg></span><span data-i18n="nav-choisir-mission">Choisir une mission</span></div>
       <div class="nav-group-label" data-i18n="grp-suivi">Suivi de projet</div>
+      <div class="nav-item " data-panel="panel-vue-ensemble"><span class="nav-icon-badge" style="color:#0EA5E9;"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="7" r="2.2"/><circle cx="19" cy="16" r="2.2"/><path d="M5 12 12 7M12 7l7 9" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span><span data-i18n="nav-vue-ensemble">Vue d'ensemble</span></div>
       <div class="nav-item " data-panel="panel-suivi-creation"><span class="nav-icon-badge" style="color:#16A34A;"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="14" width="4" height="7" rx="0.8"/><rect x="10" y="9.5" width="4" height="11.5" rx="0.8"/><rect x="16.5" y="4.5" width="4" height="16.5" rx="0.8"/></svg></span><span data-i18n="nav-suivi-creation">Suivi création d'entreprise</span></div>
       <div class="nav-item " data-panel="panel-bail"><span class="nav-icon-badge" style="color:#8B5CF6;"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7.5" cy="14.5" r="3.6"/><rect x="10.4" y="13.1" width="10.5" height="2.8" rx="1.2"/><rect x="17.5" y="9.8" width="2.8" height="3.6" rx="0.8"/></svg></span><span data-i18n="nav-bail">Bail commercial</span></div>
+      <div class="nav-item " data-panel="panel-financement"><span class="nav-icon-badge" style="color:#BA7517;"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.2v9.6M9.4 9.4c0-1.2 1.2-2 2.6-2s2.6.9 2.6 2c0 2.8-5.2 1.6-5.2 4.4 0 1.1 1.2 2 2.6 2s2.6-.8 2.6-2" stroke="#fff" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg></span><span data-i18n="nav-financement">Financement</span></div>
       <div class="nav-group-label" data-i18n="grp-agenda">Agenda</div>
       <div class="nav-item " data-panel="panel-rdv"><span class="nav-icon-badge" style="color:#EF4444;"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.2" y="3.6" width="17.6" height="4.2" rx="1.4"/><rect x="3.2" y="9.2" width="17.6" height="11.2" rx="1.6"/><rect x="7" y="2" width="1.8" height="3.4" rx="0.9" fill-opacity="0.6"/><rect x="15.2" y="2" width="1.8" height="3.4" rx="0.9" fill-opacity="0.6"/></svg></span><span data-i18n="nav-rdv">Mes rendez-vous</span></div>
       <div class="nav-group-label" data-i18n="grp-compta">Comptabilité</div>
@@ -306,30 +330,82 @@ a{color:inherit; text-decoration:none;}
 </div>
 </div>
     <div class="panel" id="panel-choisir-mission">
-      <h2 class="section-title" data-i18n="mission-title">Choisir une mission</h2>
-      <p class="section-sub" data-i18n="mission-sub">Sélectionnez ce que vous souhaitez confier à Estrecho Capital pour démarrer votre étude.</p>
-      <div class="form-grid">
-        <div class="form-field"><label data-i18n="lbl-type-mission">Type de mission</label>
-          <select>
-            <option data-i18n="opt1">Étude &amp; cadrage seul</option>
-            <option data-i18n="opt2">Création de société au Maroc</option>
-            <option data-i18n="opt3">Recherche de bureau / bail commercial</option>
-            <option data-i18n="opt4">Conciergerie seule</option>
-            <option data-i18n="opt5">Accompagnement complet</option>
-          </select>
-        </div>
+      <h2 class="section-title" data-i18n="mission-title">Choisir vos missions</h2>
+      <p class="section-sub" data-i18n="mission-sub">Cochez tout ce que vous souhaitez confier à Estrecho Capital — vous pouvez en combiner plusieurs.</p>
+
+      <div class="mission-check-list">
+        <label class="mission-check">
+          <input type="checkbox" data-mission="etude" checked disabled>
+          <span class="mission-check-body">
+            <span class="mission-check-title" data-i18n="mopt-etude">Étude &amp; cadrage</span>
+            <span class="mission-check-hint" data-i18n="mopt-etude-hint">Toujours incluse — le point de départ de tout dossier.</span>
+          </span>
+        </label>
+        <label class="mission-check">
+          <input type="checkbox" data-mission="creation" checked>
+          <span class="mission-check-body">
+            <span class="mission-check-title" data-i18n="mopt-creation">Création de société au Maroc</span>
+            <span class="mission-check-hint" data-i18n="mopt-creation-hint">Rédaction des statuts jusqu'au dépôt au greffe.</span>
+          </span>
+        </label>
+        <label class="mission-check">
+          <input type="checkbox" data-mission="bail" checked>
+          <span class="mission-check-body">
+            <span class="mission-check-title" data-i18n="mopt-bail">Recherche de bureau / bail commercial</span>
+            <span class="mission-check-hint" data-i18n="mopt-bail-hint">De la visite des locaux à la signature du bail.</span>
+          </span>
+        </label>
+        <label class="mission-check">
+          <input type="checkbox" data-mission="financement">
+          <span class="mission-check-body">
+            <span class="mission-check-title" data-i18n="mopt-financement">Financement</span>
+            <span class="mission-check-hint" data-i18n="mopt-financement-hint">Dépôt du capital, structuration bancaire, déblocage des fonds.</span>
+          </span>
+        </label>
+        <label class="mission-check">
+          <input type="checkbox" data-mission="conciergerie">
+          <span class="mission-check-body">
+            <span class="mission-check-title" data-i18n="mopt-conciergerie">Conciergerie</span>
+            <span class="mission-check-hint" data-i18n="mopt-conciergerie-hint">Vols, hébergement, voiture, interprète et plus encore.</span>
+          </span>
+        </label>
+      </div>
+
+      <div class="form-grid" style="margin-top:24px;">
         <div class="form-field"><label data-i18n="lbl-secteur-projet">Secteur du projet</label><input type="text" data-i18n-ph="ph-secteur" placeholder="Ex. Tourisme, Import/Export..."></div>
       </div>
       <div class="form-field" style="margin-bottom:24px;">
         <label data-i18n="lbl-description-mission">Décrivez votre projet</label>
         <textarea rows="5" data-i18n-ph="ph-description-mission" placeholder="Expliquez-nous ce que vous souhaitez réaliser, votre calendrier, vos contraintes particulières..." style="width:100%; border:1px solid var(--line); background:var(--card); padding:11px 12px; font-family:'Work Sans', sans-serif; font-size:0.88rem; color:var(--ink); resize:vertical;"></textarea>
       </div>
-      <div class="form-actions"><span></span><button type="button" class="btn-pill gold" data-i18n="btn-confirmer-mission">Confirmer la mission</button></div>
+      <div class="form-actions"><span></span><button type="button" class="btn-pill gold" id="btn-confirmer-mission" data-i18n="btn-confirmer-mission">Confirmer mes missions</button></div>
+</div>
+    <div class="panel" id="panel-vue-ensemble">
+      <h2 class="section-title" data-i18n="vue-title">Vue d'ensemble</h2>
+      <p class="section-sub" data-i18n="vue-sub">Tous vos chantiers en cours, sur une seule ligne de temps.</p>
+
+      <div class="cal-card">
+        <div class="timeline-legend">
+          <span class="tl-item"><span class="tl-dot" style="background:#16A34A;"></span><span data-i18n="tl-creation">Création d'entreprise</span></span>
+          <span class="tl-item"><span class="tl-dot" style="background:#8B5CF6;"></span><span data-i18n="tl-bail">Bail commercial</span></span>
+          <span class="tl-item"><span class="tl-dot" style="background:#BA7517;"></span><span data-i18n="tl-financement">Financement</span></span>
+        </div>
+        <div class="timeline-wrap">
+          <div class="timeline-line"></div>
+          <div class="tl-point creation" style="left:4%;"><span class="tl-dot-lg" style="background:#16A34A;"></span><span class="tl-label" data-i18n="tl-l1">Statuts rédigés</span></div>
+          <div class="tl-point creation" style="left:20%;"><span class="tl-dot-lg" style="background:#16A34A;"></span><span class="tl-label bottom" data-i18n="tl-l2">Statuts signés</span></div>
+          <div class="tl-point bail" style="left:36%;"><span class="tl-dot-lg" style="background:#8B5CF6;"></span><span class="tl-label" data-i18n="tl-l3">Recherche locaux</span></div>
+          <div class="tl-point bail current" style="left:52%;"><span class="tl-dot-lg" style="background:#8B5CF6;"></span><span class="tl-label bottom" data-i18n="tl-l4">Visite des biens</span></div>
+          <div class="tl-point financement" style="left:68%;"><span class="tl-dot-lg" style="background:#BA7517;"></span><span class="tl-label" data-i18n="tl-l5">Dossier financement</span></div>
+          <div class="tl-point creation" style="left:84%;"><span class="tl-dot-lg" style="background:#16A34A;"></span><span class="tl-label bottom" data-i18n="tl-l6">Dépôt au greffe</span></div>
+        </div>
+      </div>
 </div>
     <div class="panel" id="panel-suivi-creation">
       <h2 class="section-title" data-i18n="suivi-title">Suivi création d'entreprise</h2>
       <p class="section-sub" data-i18n="suivi-sub">De la rédaction des statuts jusqu'au dépôt au greffe.</p>
-      <div class="track-list">
+      <div class="na-card mission-na" data-requires="creation" data-i18n="mission-na-generic">Non applicable — cette mission n'est pas cochée dans "Démarrage".</div>
+      <div class="track-list mission-content" data-requires="creation">
         <div class="track-step done" data-step="s1">
           <button type="button" class="track-trigger">
             <span class="track-num">01</span>
@@ -389,7 +465,97 @@ a{color:inherit; text-decoration:none;}
     <div class="panel" id="panel-bail">
       <h2 class="section-title" data-i18n="bail-title">Bail commercial</h2>
       <p class="section-sub" data-i18n="bail-sub">Traçabilité de votre contrat de location de bureau.</p>
-      <div class="na-card" data-i18n="bail-na">Non applicable à votre mission actuelle. Choisissez "Recherche de bureau" dans Démarrage pour activer ce suivi.</div>
+      <div class="na-card mission-na" data-requires="bail" data-i18n="mission-na-generic">Non applicable — cette mission n'est pas cochée dans "Démarrage".</div>
+      <div class="track-list mission-content" data-requires="bail">
+        <div class="track-step done" data-step="b1">
+          <button type="button" class="track-trigger">
+            <span class="track-num">01</span>
+            <span class="track-title" data-i18n="track-b1-title">Recherche des locaux</span>
+            <span class="track-status" data-i18n="track-b1-status">Terminé</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-b1-detail">Une sélection de biens correspondant à vos critères vous a été présentée.</p></div>
+        </div>
+        <div class="track-step current open" data-step="b2">
+          <button type="button" class="track-trigger">
+            <span class="track-num">02</span>
+            <span class="track-title" data-i18n="track-b2-title">Visite des biens sélectionnés</span>
+            <span class="track-status" data-i18n="track-b2-status">En cours</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-b2-detail">Des visites sont organisées avec notre équipe sur place, à votre convenance.</p></div>
+        </div>
+        <div class="track-step pending" data-step="b3">
+          <button type="button" class="track-trigger">
+            <span class="track-num">03</span>
+            <span class="track-title" data-i18n="track-b3-title">Négociation des conditions</span>
+            <span class="track-status" data-i18n="track-b3-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-b3-detail">Loyer, charges, durée et clauses du bail sont négociés en votre nom.</p></div>
+        </div>
+        <div class="track-step pending" data-step="b4">
+          <button type="button" class="track-trigger">
+            <span class="track-num">04</span>
+            <span class="track-title" data-i18n="track-b4-title">Signature du bail</span>
+            <span class="track-status" data-i18n="track-b4-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-b4-detail">Le contrat de bail commercial est signé, en présentiel ou à distance.</p></div>
+        </div>
+        <div class="track-step pending" data-step="b5">
+          <button type="button" class="track-trigger">
+            <span class="track-num">05</span>
+            <span class="track-title" data-i18n="track-b5-title">État des lieux d'entrée</span>
+            <span class="track-status" data-i18n="track-b5-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-b5-detail">Remise des clés et état des lieux contradictoire avant votre emménagement.</p></div>
+        </div>
+      </div>
+</div>
+    <div class="panel" id="panel-financement">
+      <h2 class="section-title" data-i18n="financement-title">Suivi financement</h2>
+      <p class="section-sub" data-i18n="financement-sub">Du dépôt du capital au déblocage des fonds.</p>
+      <div class="na-card mission-na" data-requires="financement" data-i18n="mission-na-generic">Non applicable — cette mission n'est pas cochée dans "Démarrage".</div>
+      <div class="track-list mission-content" data-requires="financement">
+        <div class="track-step pending" data-step="f1">
+          <button type="button" class="track-trigger">
+            <span class="track-num">01</span>
+            <span class="track-title" data-i18n="track-f1-title">Constitution du dossier de financement</span>
+            <span class="track-status" data-i18n="track-f1-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-f1-detail">Rassemblement des pièces nécessaires à la structuration bancaire de votre projet.</p></div>
+        </div>
+        <div class="track-step pending" data-step="f2">
+          <button type="button" class="track-trigger">
+            <span class="track-num">02</span>
+            <span class="track-title" data-i18n="track-f2-title">Dépôt du capital social</span>
+            <span class="track-status" data-i18n="track-f2-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-f2-detail">Le capital est déposé sur le compte bancaire bloqué de la société en formation.</p></div>
+        </div>
+        <div class="track-step pending" data-step="f3">
+          <button type="button" class="track-trigger">
+            <span class="track-num">03</span>
+            <span class="track-title" data-i18n="track-f3-title">Validation bancaire</span>
+            <span class="track-status" data-i18n="track-f3-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-f3-detail">L'établissement partenaire valide le dossier et les conditions de déblocage.</p></div>
+        </div>
+        <div class="track-step pending" data-step="f4">
+          <button type="button" class="track-trigger">
+            <span class="track-num">04</span>
+            <span class="track-title" data-i18n="track-f4-title">Déblocage des fonds</span>
+            <span class="track-status" data-i18n="track-f4-status">À venir</span>
+            <span class="track-chevron">+</span>
+          </button>
+          <div class="track-detail"><p data-i18n="track-f4-detail">Les fonds sont débloqués une fois la société immatriculée.</p></div>
+        </div>
+      </div>
 </div>
     <div class="panel" id="panel-rdv">
       <h2 class="section-title" data-i18n="rdv-title">Mes rendez-vous</h2>
@@ -487,6 +653,29 @@ a{color:inherit; text-decoration:none;}
     });
   });
 
+  function updateMissions(){
+    var checked = {};
+    document.querySelectorAll('[data-mission]').forEach(function(cb){
+      checked[cb.getAttribute('data-mission')] = cb.checked;
+    });
+    document.querySelectorAll('.mission-content, .mission-na').forEach(function(el){
+      var req = el.getAttribute('data-requires');
+      var isOn = !!checked[req];
+      var isContent = el.classList.contains('mission-content');
+      el.style.display = (isContent === isOn) ? '' : 'none';
+    });
+    document.querySelectorAll('.tl-point').forEach(function(pt){
+      var cls = pt.classList.contains('creation') ? 'creation' : pt.classList.contains('bail') ? 'bail' : 'financement';
+      pt.classList.toggle('dim', !checked[cls]);
+    });
+  }
+  document.querySelectorAll('[data-mission]').forEach(function(cb){
+    cb.addEventListener('change', updateMissions);
+  });
+  var confirmBtn = document.getElementById('btn-confirmer-mission');
+  if(confirmBtn){ confirmBtn.addEventListener('click', updateMissions); }
+  updateMissions();
+
   var sidebarEl = document.querySelector('.sidebar');
   var overlayEl = document.getElementById('sidebar-overlay');
   var menuToggle = document.getElementById('menu-toggle');
@@ -504,7 +693,7 @@ a{color:inherit; text-decoration:none;}
 
 <script>
 (function(){
-  var ES = {"brand-sub": "Área Cliente", "nav-mes-infos": "Mi información", "grp-demarrage": "Inicio", "nav-choisir-mission": "Elegir una misión", "grp-suivi": "Seguimiento del proyecto", "nav-suivi-creation": "Seguimiento de constitución", "nav-bail": "Contrato de alquiler", "grp-agenda": "Agenda", "nav-rdv": "Mis citas", "grp-compta": "Contabilidad", "nav-docs-compta": "Mis documentos contables", "grp-conciergerie": "Conserjería", "nav-reserver": "Reservar un servicio", "sidebar-who-name": "Su empresa", "sidebar-who-role": "Cliente", "sidebar-logout": "Salir", "topbar-sub": "Estrecho Capital — Área Cliente", "subtab-compte": "Mi cuenta", "subtab-docs": "Mis documentos", "subtab-marketing": "Marketing", "mc-hint": "La foto de perfil no es visible en los documentos.", "mc-status": "Activo", "lbl-forme": "Forma jurídica", "lbl-denom": "Denominación comercial", "lbl-societe": "Sociedad", "lbl-nif": "NIF / CIF", "lbl-dossier": "N.º de expediente Estrecho", "lbl-prenom": "Nombre del representante", "lbl-nom": "Apellidos del representante", "lbl-adresse": "Dirección", "lbl-compl": "Dirección (línea 2)", "lbl-cp": "Código postal", "lbl-ville": "Ciudad", "lbl-tel": "Teléfono", "lbl-mobile": "Teléfono móvil", "btn-rib": "Gestión de cuentas bancarias", "h3-idmdp": "Usuario y contraseña", "p-idmdp": "Cambie su correo electrónico o su contraseña de acceso.", "lbl-email-connexion": "Correo electrónico de acceso", "btn-change-email": "Solicitar cambio de correo", "btn-change-mdp": "Cambiar contraseña", "info-box-email": "No hay ningún correo secundario configurado. Puede añadir hasta 2.", "btn-add-email": "Añadir un correo", "docs-title": "Mis documentos", "docs-sub": "Documentos necesarios para abrir y dar seguimiento a su expediente.", "doc1-n": "Nota Simple del Registro Mercantil", "doc1-h": "Extracto del Registro Mercantil español", "doc2-n": "Escritura de constitución", "doc2-h": "Escritura de constitución de la sociedad", "doc3-n": "RIB / IBAN", "doc3-h": "Datos bancarios de la sociedad", "doc4-n": "DNI del representante — anverso", "doc4-h": "DNI, NIE o pasaporte", "doc5-n": "DNI del representante — reverso", "doc5-h": "DNI, NIE o pasaporte", "doc6-n": "Contrato de prestación de servicios", "doc6-h": "Firmado con Estrecho Capital", "doc-status-missing": "&#9679; Falta", "btn-deposer": "Subir", "mk-title": "Marketing", "mk-sub": "Los elementos de imagen utilizados en nuestras comunicaciones y materiales sobre usted.", "lbl-logo": "Logotipo de la empresa", "btn-logo": "Subir un logotipo", "lbl-site": "Dirección del sitio web", "lbl-linkedin": "LinkedIn", "lbl-autre-reseau": "Otra red social", "mission-title": "Elegir una misión", "mission-sub": "Seleccione lo que desea encargar a Estrecho Capital para iniciar su estudio.", "lbl-type-mission": "Tipo de misión", "opt1": "Solo estudio y definición", "opt2": "Constitución de sociedad en Marruecos", "opt3": "Búsqueda de oficina / contrato de alquiler", "opt4": "Solo conserjería", "opt5": "Acompañamiento integral", "lbl-secteur-projet": "Sector del proyecto", "btn-confirmer-mission": "Confirmar la misión", "suivi-title": "Seguimiento de constitución", "suivi-sub": "Desde la redacción de los estatutos hasta la inscripción registral.", "suivi-na": "No aplicable a su misión actual. Elija \"Constitución de sociedad en Marruecos\" en Inicio para activar este seguimiento.", "bail-title": "Contrato de alquiler", "bail-sub": "Trazabilidad de su contrato de alquiler de oficina.", "bail-na": "No aplicable a su misión actual. Elija \"Búsqueda de oficina\" en Inicio para activar este seguimiento.", "rdv-title": "Mis citas", "rdv-sub": "Reuniones y encuentros con clientes, proveedores y socios en Marruecos.", "rdv-stub": "Por el momento no hay ninguna cita programada.", "compta-title": "Mis documentos contables", "compta-sub": "Depósito recurrente, una vez iniciada su misión.", "compta-na": "Esta sección se activará una vez confirmada su misión.", "conc-title": "Reservar un servicio", "conc-sub": "Vuelos, alojamiento, coche, intérprete y mucho más.", "conc-stub": "El formulario de reserva estará disponible aquí próximamente.", "_title": "Mi Espacio Cliente — Estrecho Capital", "mc-heading": "Mi cuenta", "ph-prenom": "Nombre", "ph-autreresau": "https://", "ph-adresse": "Dirección en España", "ph-ville": "Ciudad", "ph-nif": "Número de identificación fiscal", "ph-dossier": "Se asigna tras su primer estudio", "ph-raisonsociale": "Razón social", "ph-nom": "Apellidos", "ph-cp": "Código postal", "ph-nomcommercial": "Nombre comercial (si es distinto)", "ph-logo": "Ningún archivo subido", "ph-secteur": "Ej. Turismo, Import/Export...", "ph-linkedin": "https://linkedin.com/company/...", "ph-tel": "Teléfono", "ph-compladresse": "Dirección (línea 2)", "ph-mobile": "Teléfono móvil", "ph-siteweb": "https://", "val-email-connexion": "contacto@susociedad.es", "btn-enregistrer": "Guardar", "lbl-description-mission": "Describa su proyecto", "ph-description-mission": "Explíquenos lo que desea realizar, su calendario, sus limitaciones particulares...", "cal-month": "Septiembre 2026", "cal-upcoming-title": "Próximas citas", "track-s1-title": "Redacción de los estatutos", "track-s1-status": "Completado", "track-s1-detail": "El proyecto de estatutos de su sociedad ha sido redactado por nuestro equipo jurídico y enviado para su validación.", "track-s2-title": "Firma de los estatutos", "track-s2-status": "Completado", "track-s2-detail": "Los estatutos han sido firmados por los socios, presencialmente o a distancia según su disponibilidad.", "track-s3-title": "Apertura de la cuenta bancaria bloqueada", "track-s3-status": "En curso", "track-s3-detail": "El capital social se está depositando en una cuenta bloqueada, paso obligatorio antes de la inscripción.", "track-s4-title": "Publicación del anuncio legal", "track-s4-status": "Próximamente", "track-s4-detail": "Se publicará un anuncio en un periódico de anuncios legales para oficializar la constitución.", "track-s5-title": "Depósito en el registro mercantil", "track-s5-status": "Próximamente", "track-s5-detail": "El expediente completo se presentará ante el tribunal de comercio competente.", "track-s6-title": "Inscripción y entrega del expediente final", "track-s6-status": "Próximamente", "track-s6-detail": "Recepción del registro de comercio, el identificador fiscal y entrega de todos sus documentos oficiales.", "lbl-conc-service": "Servicio deseado", "conc-opt1": "Vuelos", "conc-opt2": "Alojamiento", "conc-opt3": "Alquiler de coche", "conc-opt4": "Espacio de coworking", "conc-opt5": "Intérprete", "conc-opt6": "Otra solicitud", "lbl-conc-date": "Fecha deseada", "lbl-conc-personnes": "Número de personas", "lbl-conc-ville": "Ciudad", "ph-conc-ville": "Ej. Casablanca, Rabat, Tánger...", "lbl-conc-details": "Detalles de la solicitud", "ph-conc-details": "Especifique sus necesidades: horarios, preferencias, limitaciones particulares...", "btn-conc-reserver": "Enviar la solicitud"};
+  var ES = {"brand-sub": "Área Cliente", "nav-mes-infos": "Mi información", "grp-demarrage": "Inicio", "nav-choisir-mission": "Elegir una misión", "grp-suivi": "Seguimiento del proyecto", "nav-suivi-creation": "Seguimiento de constitución", "nav-bail": "Contrato de alquiler", "grp-agenda": "Agenda", "nav-rdv": "Mis citas", "grp-compta": "Contabilidad", "nav-docs-compta": "Mis documentos contables", "grp-conciergerie": "Conserjería", "nav-reserver": "Reservar un servicio", "sidebar-who-name": "Su empresa", "sidebar-who-role": "Cliente", "sidebar-logout": "Salir", "topbar-sub": "Estrecho Capital — Área Cliente", "subtab-compte": "Mi cuenta", "subtab-docs": "Mis documentos", "subtab-marketing": "Marketing", "mc-hint": "La foto de perfil no es visible en los documentos.", "mc-status": "Activo", "lbl-forme": "Forma jurídica", "lbl-denom": "Denominación comercial", "lbl-societe": "Sociedad", "lbl-nif": "NIF / CIF", "lbl-dossier": "N.º de expediente Estrecho", "lbl-prenom": "Nombre del representante", "lbl-nom": "Apellidos del representante", "lbl-adresse": "Dirección", "lbl-compl": "Dirección (línea 2)", "lbl-cp": "Código postal", "lbl-ville": "Ciudad", "lbl-tel": "Teléfono", "lbl-mobile": "Teléfono móvil", "btn-rib": "Gestión de cuentas bancarias", "h3-idmdp": "Usuario y contraseña", "p-idmdp": "Cambie su correo electrónico o su contraseña de acceso.", "lbl-email-connexion": "Correo electrónico de acceso", "btn-change-email": "Solicitar cambio de correo", "btn-change-mdp": "Cambiar contraseña", "info-box-email": "No hay ningún correo secundario configurado. Puede añadir hasta 2.", "btn-add-email": "Añadir un correo", "docs-title": "Mis documentos", "docs-sub": "Documentos necesarios para abrir y dar seguimiento a su expediente.", "doc1-n": "Nota Simple del Registro Mercantil", "doc1-h": "Extracto del Registro Mercantil español", "doc2-n": "Escritura de constitución", "doc2-h": "Escritura de constitución de la sociedad", "doc3-n": "RIB / IBAN", "doc3-h": "Datos bancarios de la sociedad", "doc4-n": "DNI del representante — anverso", "doc4-h": "DNI, NIE o pasaporte", "doc5-n": "DNI del representante — reverso", "doc5-h": "DNI, NIE o pasaporte", "doc6-n": "Contrato de prestación de servicios", "doc6-h": "Firmado con Estrecho Capital", "doc-status-missing": "&#9679; Falta", "btn-deposer": "Subir", "mk-title": "Marketing", "mk-sub": "Los elementos de imagen utilizados en nuestras comunicaciones y materiales sobre usted.", "lbl-logo": "Logotipo de la empresa", "btn-logo": "Subir un logotipo", "lbl-site": "Dirección del sitio web", "lbl-linkedin": "LinkedIn", "lbl-autre-reseau": "Otra red social", "mission-title": "Elegir sus misiones", "mission-sub": "Marque todo lo que desea encargar a Estrecho Capital — puede combinar varias.", "lbl-type-mission": "Tipo de misión", "opt1": "Solo estudio y definición", "opt2": "Constitución de sociedad en Marruecos", "opt3": "Búsqueda de oficina / contrato de alquiler", "opt4": "Solo conserjería", "opt5": "Acompañamiento integral", "lbl-secteur-projet": "Sector del proyecto", "btn-confirmer-mission": "Confirmar mis misiones", "suivi-title": "Seguimiento de constitución", "suivi-sub": "Desde la redacción de los estatutos hasta la inscripción registral.", "suivi-na": "No aplicable a su misión actual. Elija \"Constitución de sociedad en Marruecos\" en Inicio para activar este seguimiento.", "bail-title": "Contrato de alquiler", "bail-sub": "Trazabilidad de su contrato de alquiler de oficina.", "bail-na": "No aplicable a su misión actual. Elija \"Búsqueda de oficina\" en Inicio para activar este seguimiento.", "rdv-title": "Mis citas", "rdv-sub": "Reuniones y encuentros con clientes, proveedores y socios en Marruecos.", "rdv-stub": "Por el momento no hay ninguna cita programada.", "compta-title": "Mis documentos contables", "compta-sub": "Depósito recurrente, una vez iniciada su misión.", "compta-na": "Esta sección se activará una vez confirmada su misión.", "conc-title": "Reservar un servicio", "conc-sub": "Vuelos, alojamiento, coche, intérprete y mucho más.", "conc-stub": "El formulario de reserva estará disponible aquí próximamente.", "_title": "Mi Espacio Cliente — Estrecho Capital", "mc-heading": "Mi cuenta", "ph-prenom": "Nombre", "ph-autreresau": "https://", "ph-adresse": "Dirección en España", "ph-ville": "Ciudad", "ph-nif": "Número de identificación fiscal", "ph-dossier": "Se asigna tras su primer estudio", "ph-raisonsociale": "Razón social", "ph-nom": "Apellidos", "ph-cp": "Código postal", "ph-nomcommercial": "Nombre comercial (si es distinto)", "ph-logo": "Ningún archivo subido", "ph-secteur": "Ej. Turismo, Import/Export...", "ph-linkedin": "https://linkedin.com/company/...", "ph-tel": "Teléfono", "ph-compladresse": "Dirección (línea 2)", "ph-mobile": "Teléfono móvil", "ph-siteweb": "https://", "val-email-connexion": "contacto@susociedad.es", "btn-enregistrer": "Guardar", "lbl-description-mission": "Describa su proyecto", "ph-description-mission": "Explíquenos lo que desea realizar, su calendario, sus limitaciones particulares...", "cal-month": "Septiembre 2026", "cal-upcoming-title": "Próximas citas", "track-s1-title": "Redacción de los estatutos", "track-s1-status": "Completado", "track-s1-detail": "El proyecto de estatutos de su sociedad ha sido redactado por nuestro equipo jurídico y enviado para su validación.", "track-s2-title": "Firma de los estatutos", "track-s2-status": "Completado", "track-s2-detail": "Los estatutos han sido firmados por los socios, presencialmente o a distancia según su disponibilidad.", "track-s3-title": "Apertura de la cuenta bancaria bloqueada", "track-s3-status": "En curso", "track-s3-detail": "El capital social se está depositando en una cuenta bloqueada, paso obligatorio antes de la inscripción.", "track-s4-title": "Publicación del anuncio legal", "track-s4-status": "Próximamente", "track-s4-detail": "Se publicará un anuncio en un periódico de anuncios legales para oficializar la constitución.", "track-s5-title": "Depósito en el registro mercantil", "track-s5-status": "Próximamente", "track-s5-detail": "El expediente completo se presentará ante el tribunal de comercio competente.", "track-s6-title": "Inscripción y entrega del expediente final", "track-s6-status": "Próximamente", "track-s6-detail": "Recepción del registro de comercio, el identificador fiscal y entrega de todos sus documentos oficiales.", "lbl-conc-service": "Servicio deseado", "conc-opt1": "Vuelos", "conc-opt2": "Alojamiento", "conc-opt3": "Alquiler de coche", "conc-opt4": "Espacio de coworking", "conc-opt5": "Intérprete", "conc-opt6": "Otra solicitud", "lbl-conc-date": "Fecha deseada", "lbl-conc-personnes": "Número de personas", "lbl-conc-ville": "Ciudad", "ph-conc-ville": "Ej. Casablanca, Rabat, Tánger...", "lbl-conc-details": "Detalles de la solicitud", "ph-conc-details": "Especifique sus necesidades: horarios, preferencias, limitaciones particulares...", "btn-conc-reserver": "Enviar la solicitud", "nav-vue-ensemble": "Vista general", "nav-financement": "Financiación", "mopt-etude": "Estudio y definición", "mopt-etude-hint": "Siempre incluido — el punto de partida de todo expediente.", "mopt-creation": "Constitución de sociedad en Marruecos", "mopt-creation-hint": "Desde la redacción de los estatutos hasta la inscripción registral.", "mopt-bail": "Búsqueda de oficina / contrato de alquiler", "mopt-bail-hint": "Desde la visita de los locales hasta la firma del contrato.", "mopt-financement": "Financiación", "mopt-financement-hint": "Depósito del capital, estructuración bancaria, liberación de fondos.", "mopt-conciergerie": "Conserjería", "mopt-conciergerie-hint": "Vuelos, alojamiento, coche, intérprete y mucho más.", "mission-na-generic": "No aplicable — esta misión no está marcada en \"Inicio\".", "vue-title": "Vista general", "vue-sub": "Todos sus proyectos en curso, en una sola línea de tiempo.", "tl-creation": "Constitución de sociedad", "tl-bail": "Contrato de alquiler", "tl-financement": "Financiación", "tl-l1": "Estatutos redactados", "tl-l2": "Estatutos firmados", "tl-l3": "Búsqueda de locales", "tl-l4": "Visita de los locales", "tl-l5": "Expediente de financiación", "tl-l6": "Depósito registral", "financement-title": "Suivi financement", "financement-sub": "Du dépôt du capital au déblocage des fonds.", "track-b1-title": "Búsqueda de locales", "track-b1-status": "Completado", "track-b1-detail": "Se le ha presentado una selección de inmuebles según sus criterios.", "track-b2-title": "Visita de los locales seleccionados", "track-b2-status": "En curso", "track-b2-detail": "Se organizan visitas con nuestro equipo local, según su disponibilidad.", "track-b3-title": "Negociación de las condiciones", "track-b3-status": "Próximamente", "track-b3-detail": "Alquiler, gastos, duración y cláusulas del contrato se negocian en su nombre.", "track-b4-title": "Firma del contrato de alquiler", "track-b4-status": "Próximamente", "track-b4-detail": "El contrato de alquiler comercial se firma, presencialmente o a distancia.", "track-b5-title": "Acta de entrega de llaves", "track-b5-status": "Próximamente", "track-b5-detail": "Entrega de llaves e inventario contradictorio antes de su instalación.", "track-f1-title": "Constitución del expediente de financiación", "track-f1-status": "Próximamente", "track-f1-detail": "Recopilación de los documentos necesarios para la estructuración bancaria de su proyecto.", "track-f2-title": "Depósito del capital social", "track-f2-status": "Próximamente", "track-f2-detail": "El capital se deposita en la cuenta bancaria bloqueada de la sociedad en formación.", "track-f3-title": "Validación bancaria", "track-f3-status": "Próximamente", "track-f3-detail": "La entidad asociada valida el expediente y las condiciones de liberación.", "track-f4-title": "Liberación de los fondos", "track-f4-status": "Próximamente", "track-f4-detail": "Los fondos se liberan una vez inscrita la sociedad."};
   var frTitle = document.title;
   var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
   var frCache = new Map();
