@@ -36,7 +36,8 @@ a{color:inherit; text-decoration:none;}
 .sidebar-brand-text small{display:block; font-family:'Work Sans', sans-serif; font-size:0.58rem; letter-spacing:0.1em; color:var(--copper); font-weight:600; margin-top:2px;}
 
 .sidebar-nav{flex:1; padding:14px 0;}
-.nav-group-label{font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,241,231,0.3); padding:16px 20px 8px;}
+.nav-group-label{font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,241,231,0.3); padding:16px 20px 8px; margin-top:6px; border-top:1px solid rgba(245,241,231,0.07);}
+.nav-group-label:first-child{border-top:none; margin-top:0;}
 .nav-item{display:flex; align-items:center; gap:11px; padding:9px 20px; font-size:0.86rem; font-weight:500; color:rgba(245,241,231,0.7); cursor:pointer; border-left:3px solid transparent; transition:background .15s ease, color .15s ease, border-color .15s ease;}
 .nav-item svg{width:16px; height:16px; flex-shrink:0; opacity:0.75;}
 .nav-item:hover{background:rgba(245,241,231,0.04); color:var(--ivory);}
@@ -105,22 +106,27 @@ a{color:inherit; text-decoration:none;}
 .stub-card{background:var(--card); border:1px solid var(--line); padding:60px 20px; text-align:center; color:rgba(30,26,18,0.42); font-size:0.92rem;}
 
 .track-list{border-top:1px solid var(--line);}
-.track-step{border-bottom:1px solid var(--line); background:var(--card);}
+.track-step{border-bottom:1px solid var(--line); background:var(--card); transition:box-shadow .2s ease;}
+.track-step:hover{box-shadow:inset 3px 0 0 var(--copper);}
 .track-trigger{width:100%; display:flex; align-items:center; gap:16px; background:none; border:none; padding:16px 4px; cursor:pointer; text-align:left; font-family:'Work Sans', sans-serif;}
 .track-num{font-family:'Playfair Display', serif; font-weight:700; font-size:1rem; color:rgba(30,26,18,0.28); width:28px; flex-shrink:0;}
 .track-step.done .track-num{color:var(--green);}
 .track-step.current .track-num{color:var(--copper-deep);}
 .track-title{flex:1; font-size:0.92rem; font-weight:600; color:var(--ink);}
 .track-status{font-size:0.72rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:4px 10px; border-radius:12px; color:rgba(30,26,18,0.4); background:rgba(30,26,18,0.06);}
+.track-status::before{content:"○ ";}
 .track-step.done .track-status{color:var(--green); background:rgba(31,157,99,0.12);}
+.track-step.done .track-status::before{content:"✓ ";}
 .track-step.current .track-status{color:var(--copper-deep); background:rgba(250,189,0,0.14);}
+.track-step.current .track-status::before{content:"● ";}
 .track-chevron{font-family:'Playfair Display', serif; font-size:1.2rem; color:rgba(30,26,18,0.35); transition:transform .2s ease; flex-shrink:0;}
 .track-step.open .track-chevron{transform:rotate(45deg);}
 .track-detail{max-height:0; overflow:hidden; transition:max-height .3s ease;}
 .track-step.open .track-detail{max-height:160px;}
 .track-detail p{padding:0 4px 20px 44px; font-size:0.86rem; color:rgba(30,26,18,0.6); max-width:600px;}
 
-.cal-card{background:var(--card); border:1px solid var(--line); padding:24px; margin-bottom:36px;}
+.cal-card{background:var(--card); border:1px solid var(--line); padding:24px; margin-bottom:36px; transition:box-shadow .2s ease;}
+.cal-card:hover{box-shadow:0 8px 20px rgba(11,20,32,0.08);}
 .cal-head{display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
 .cal-month{font-family:'Playfair Display', serif; font-weight:700; font-size:1.05rem;}
 .cal-grid{display:grid; grid-template-columns:repeat(7, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
@@ -133,9 +139,15 @@ a{color:inherit; text-decoration:none;}
 @media (max-width:600px){.cal-cell{min-height:38px; padding:4px;} .cal-daynum{font-size:0.72rem;}}
 .na-card{background:rgba(30,26,18,0.03); border:1px dashed var(--line); padding:40px 20px; text-align:center; color:rgba(30,26,18,0.5); font-size:0.9rem;}
 
+.menu-toggle{display:none; background:none; border:none; padding:4px; cursor:pointer; color:var(--ink); flex-shrink:0;}
+.menu-toggle svg{width:22px; height:22px;}
+.sidebar-overlay{display:none; position:fixed; inset:0; background:rgba(11,20,32,0.45); z-index:55;}
+.sidebar-overlay.open{display:block;}
+
 @media (max-width: 900px){
   .sidebar{position:fixed; left:-260px; z-index:60; transition:left .2s ease;}
   .sidebar.open{left:0;}
+  .menu-toggle{display:block;}
   .form-grid{grid-template-columns:1fr;}
 }
 </style>
@@ -174,9 +186,15 @@ a{color:inherit; text-decoration:none;}
 
   <div class="main">
     <div class="topbar">
-      <div><h1 id="topbar-title">Mes informations</h1></div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <h1 id="topbar-title">Mes informations</h1>
+      </div>
       <span class="topbar-sub" data-i18n="topbar-sub">Estrecho Capital — Espace Client</span>
     </div>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
     <div class="content">
       <div class="panel active" id="panel-mes-infos">
       <div class="subtabs">
@@ -461,6 +479,19 @@ a{color:inherit; text-decoration:none;}
       btn.closest('.track-step').classList.toggle('open');
     });
   });
+
+  var sidebarEl = document.querySelector('.sidebar');
+  var overlayEl = document.getElementById('sidebar-overlay');
+  var menuToggle = document.getElementById('menu-toggle');
+  function closeMenu(){ sidebarEl.classList.remove('open'); overlayEl.classList.remove('open'); }
+  function openMenu(){ sidebarEl.classList.add('open'); overlayEl.classList.add('open'); }
+  if(menuToggle){
+    menuToggle.addEventListener('click', function(){
+      sidebarEl.classList.contains('open') ? closeMenu() : openMenu();
+    });
+  }
+  if(overlayEl){ overlayEl.addEventListener('click', closeMenu); }
+  document.querySelectorAll('.nav-item').forEach(function(it){ it.addEventListener('click', closeMenu); });
 </script>
 
 
